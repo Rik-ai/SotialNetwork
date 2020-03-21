@@ -6,5 +6,10 @@ ENV=DEV
 PORT=8002
 ```
 
-Then run `yarn start`
+
+Then run:
+```
+yarn install 
+yarn start
+```
 
