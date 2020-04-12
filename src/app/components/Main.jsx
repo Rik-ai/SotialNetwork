@@ -12,7 +12,7 @@ const AppStyleWrapper = styled.div`
   width: 100vw;
   overflow: hidden;
   display: flex;
-color: ${props=>props.color};
+  color: ${props=>props.color};
 `
 
 const Main = () => {
@@ -21,9 +21,8 @@ const Main = () => {
   // const dispatch = useDispatch()
   // const theme = useSelector(getTheme)
 
-
   return (
-    <AppStyleWrapper color = {theme.text.c0}>
+    <AppStyleWrapper >
       <Sidebar/>
     </AppStyleWrapper>
   )
