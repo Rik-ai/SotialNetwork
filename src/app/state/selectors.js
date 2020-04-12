@@ -1,2 +1,1 @@
-// Session selectors
-// export const getToken = state => state.session?.token
+export const getTheme = state => state.general?.theme
