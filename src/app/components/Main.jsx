@@ -12,7 +12,7 @@ const AppStyleWrapper = styled.div`
   width: 100vw;
   overflow: hidden;
   display: flex;
-  color: ${props=>props.color};
+  color: ${props => props.color}
 `
 
 const Main = () => {
