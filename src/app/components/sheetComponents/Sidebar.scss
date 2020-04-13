@@ -1,0 +1,18 @@
+.Sidebar{
+    position: relative;
+    height: calc(100vh - 75px);
+    overflow: auto;
+    width: 260px;
+    z-index: 4;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    background-color:#353f53;
+    flex: 0 0 auto;
+    display: block;
+    border: 0;
+    
+}
+.Sidebar cls{
+    color: red;
+}
+
