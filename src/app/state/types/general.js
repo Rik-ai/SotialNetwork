@@ -1,0 +1,3 @@
+export const
+      CATCH_API_ERROR = 'CATCH_API_ERROR',
+      TOGGLE_THEME = 'TOGGLE_THEME'

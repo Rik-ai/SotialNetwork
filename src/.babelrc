@@ -1,0 +1,62 @@
+{
+  "env": {
+    "development": {
+      "presets": [
+        "@babel/preset-react",
+        [
+          "@babel/preset-env",
+          {
+            "useBuiltIns": "entry",
+            "debug": true
+          }
+        ]
+      ],
+      "plugins": [
+        "emotion",
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-transform-react-jsx-self",
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-transform-object-assign",
+        "@babel/plugin-transform-regenerator",
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-proposal-optional-chaining",
+        [
+          "@babel/plugin-proposal-object-rest-spread",
+          {
+            "useBuiltIns": true
+          }
+        ],
+        "react-hot-loader/babel"
+      ]
+    },
+    "production": {
+      "presets": [
+        "@babel/preset-react",
+        [
+          "@babel/preset-env",
+          {
+            "useBuiltIns": "entry"
+          }
+        ]
+      ],
+      "plugins": [
+        "emotion",
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-transform-react-constant-elements",
+        "@babel/plugin-transform-react-inline-elements",
+        "transform-react-remove-prop-types",
+        "@babel/plugin-transform-object-assign",
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-transform-regenerator",
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-proposal-optional-chaining",
+        [
+          "@babel/plugin-proposal-object-rest-spread",
+          {
+            "useBuiltIns": true
+          }
+        ]
+      ]
+    }
+  }
+}
