@@ -5,8 +5,6 @@ import { toggleTheme } from 'state/actions'
 import { getTheme } from 'state/selectors'
 import Bar from './UI/Bar/Bar'
 import LeftBar from './LeftBar/LeftBar'
-import Logo from './Logo/Logo'
-
 
 
 
@@ -38,7 +36,6 @@ const Main = () => {
     <AppStyleWrapper>
       <LeftBar />
       <Bar>
-        <Logo />
       </Bar>
     </AppStyleWrapper >
 

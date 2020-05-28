@@ -7,8 +7,6 @@ import { ReactComponent as CogIcon } from './icons/cog.svg';
 import { ReactComponent as ChevronIcon } from './icons/chevron.svg';
 import { ReactComponent as ArrowIcon } from './icons/arrow.svg';
 import { ReactComponent as BoltIcon } from './icons/bolt.svg';
-
-
 import React, { useState, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import styled from '@emotion/styled'
@@ -23,10 +21,20 @@ const Ul = styled.ul`
   padding: 0;
 `
 
+const Img = styled.div`
+top: 15px;
+right: 1800px;
+position: absolute;
+`
+
 
 function Bar() {
   return (
+
     <Navbar>
+      <Img>
+        <img src={'./icons/Logo.jpg'} />
+      </Img>
       <Select />
       <NavItem icon={<PlusIcon />} />
       <NavItem icon={<BellIcon />} />
