@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import styled from '@emotion/styled'
 import { toggleTheme } from 'state/actions'
 import { getTheme } from 'state/selectors'
-import Bar from './UI/Bar/Bar'
+import Bar from './Bar/Bar'
 import LeftBar from './LeftBar/LeftBar'
 
 

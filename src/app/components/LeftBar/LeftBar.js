@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled'
-import Button from '../UI/Select/Select'
-import Select from '../UI/Select/Select'
+import Button from '../Select/Select'
+import Select from '../Select/Select'
 
 const SideBanner = styled.div`
 background-color:#242526;
@@ -17,23 +17,23 @@ border-radius: 15px;
 
 
 const LeftBar = () => {
-    const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false)
 
-    return (
-        <SideBanner onClick={() => setVisible(!visible)}>
-            {
-                [1, 2, 3, 4, 5, 6].map((item, index) => {
-                    return (
-                        <Select
-                            key={index}
-                            display={visible ? 'block' : 'none'}
-                        > {item} Hello!
-                        </Select>
-                    )
-                })
-            }
-        </SideBanner>
-    )
+  return (
+    <SideBanner onClick={() => setVisible(!visible)}>
+      {
+        [1, 2, 3, 4, 5, 6].map((item, index) => {
+          return (
+            <Select
+              key={index}
+              display={visible ? 'block' : 'none'}
+            > {item} Hello!
+            </Select>
+          )
+        })
+      }
+    </SideBanner>
+  )
 }
 
 
