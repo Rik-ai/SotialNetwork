@@ -11,7 +11,7 @@ padding: 1rem;
 border-right: 1px solid #474a4d;
 border-top: 1px solid #474a4d;
 border-radius: 15px;
-color:white;
+color:#dadce1;
 font-size: 2em;
 `
 const Nav = styled.nav`

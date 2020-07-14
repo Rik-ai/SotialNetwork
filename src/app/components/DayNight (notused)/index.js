@@ -1,19 +1,19 @@
-import React, { Component, useState } from 'react'
+import React from 'react'
 import './index.scss'
-import styled from '@emotion/styled'
+
 
 
 
 
 const Day = () => {
-    return (
-        <label>
+  return (
+    <label>
 
-            <input type="checkbox" />
-            <span className="check" />
+      <input type="checkbox" />
+      <span className="check" />
 
-        </label>
-    )
+    </label>
+  )
 }
 
 export default Day

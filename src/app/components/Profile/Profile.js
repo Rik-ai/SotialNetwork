@@ -9,7 +9,7 @@ width: 1500px;
 padding: 1rem;
 border 1px solid #474a4d;
 border-radius: 15px;
-color:white;
+color:#dadce1;
 font-size: 2em;
 `
 
