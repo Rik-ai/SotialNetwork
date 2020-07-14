@@ -2,7 +2,7 @@ import React from 'react'
 import { Router, Route } from 'react-router-dom'
 import history from 'shared/utils/history'
 
-//import './app/shared/styles/main.scss'
+
 
 import Routing from './app/components/Routing'
 

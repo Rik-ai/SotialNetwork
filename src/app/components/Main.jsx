@@ -1,11 +1,8 @@
-import React, { Component } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React from 'react'
 import styled from '@emotion/styled'
-import { toggleTheme } from 'state/actions'
-import { getTheme } from 'state/selectors'
-import Bar from './TopBar/Bar/Bar'
+import TopBar from './TopBar/TopBar'
 import LeftBar from './LeftBar/LeftBar'
-import MainContent from'./Main/Main'
+import Profile from'./Profile/Profile'
 
 
 
@@ -30,15 +27,11 @@ color: ${props => props.color};
 
 const Main = () => { 
 
-  // Toogle theme
-  // const dispatch = useDispatch()
-  // const theme = useSelector(getTheme)
-
   return (
     <AppStyleWrapper>
+      <TopBar/>
       <LeftBar />
-      <Bar/>
-      <MainContent/>
+      <Profile/>
     </AppStyleWrapper >
 
   )

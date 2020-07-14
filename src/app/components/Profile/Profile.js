@@ -15,14 +15,12 @@ font-size: 2em;
 
 
 
-const MainContent = () => {
+const Profile = () => {
   return (
     <SideBanner >
       <div>Avatar</div>
       <div> My posts
-        <div>
-            New posts
-        </div>
+        <div>New posts</div>
         <div>Post 1</div>
         <div>Post 2</div>
       </div>
@@ -31,4 +29,4 @@ const MainContent = () => {
 }
   
   
-export default MainContent
+export default Profile

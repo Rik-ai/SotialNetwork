@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 
 const SideBanner = styled.div`
 background-color:#242526;
-margin-top: 90px;
+margin-top: 30px;
 position: absolute;
 height: 100%;
 width: 250px;

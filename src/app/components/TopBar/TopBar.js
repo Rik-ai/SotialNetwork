@@ -10,7 +10,7 @@ import { ReactComponent as BoltIcon } from './icons/bolt.svg'
 import React, { useState, useEffect, useRef } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import styled from '@emotion/styled'
-import Select from '../Select/Select'
+import Select from './Select/Select'
 
 
 
@@ -27,7 +27,7 @@ position:relative;
 right: 1470px;
 `
 
-function Bar() {
+function TopBar() {
   return (
 
     <Navbar>
@@ -163,4 +163,4 @@ function DropdownMenu() {
 
 
 
-export default Bar
+export default TopBar
