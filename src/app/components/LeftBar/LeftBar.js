@@ -15,7 +15,7 @@ color:white;
 font-size: 2em;
 `
 const Nav = styled.nav`
-margin:20px;
+margin: 0 30px;
 `
 const Div = styled.div`
 padding-top:20px;
@@ -26,9 +26,12 @@ const LeftBar = () => {
   return (
     <SideBanner >
       <Nav>
-        <Div>Profile</Div>
-        <Div>Messages</Div>
-        <Div>Main content</Div>
+        <Div><a>Profile</a></Div>
+        <Div><a>Messages</a></Div>
+        <Div><a>News</a></Div>
+        <Div><a>Music</a></Div>
+        <Div><a>Settings</a></Div>
+
       </Nav>
     </SideBanner>
   )

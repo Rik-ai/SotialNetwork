@@ -20,12 +20,18 @@ const Ul = styled.ul`
   margin: 0;
   padding: 0;
 `
+const Img=styled.img`
+width:80px;
+height: 100%;
+position:relative;
+right: 1470px;
+`
 
 function Bar() {
   return (
 
     <Navbar>
-      
+      <Img src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTfTBba-a3Kwl_OzBUcg7wBiaUa-iW1PNkzag&usqp=CAU' />
       <Select />
       <NavItem icon={<PlusIcon />} />
       <NavItem icon={<BellIcon />} />
@@ -106,7 +112,7 @@ function DropdownMenu() {
             leftIcon={<CogIcon />}
             rightIcon={<ChevronIcon />}
             goToMenu="settings">
-            Settings
+            Codding Languages
           </DropdownItem>
           <DropdownItem
             leftIcon="🦧"
@@ -147,7 +153,7 @@ function DropdownMenu() {
           </DropdownItem>
           <DropdownItem leftIcon="🦘">Kangaroo</DropdownItem>
           <DropdownItem leftIcon="🐸">Frog</DropdownItem>
-          <DropdownItem leftIcon="🦋">Horse?</DropdownItem>
+          <DropdownItem leftIcon="🦋">Horse</DropdownItem>
           <DropdownItem leftIcon="🦔">Hedgehog</DropdownItem>
         </div>
       </CSSTransition>

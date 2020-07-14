@@ -5,6 +5,8 @@ import { toggleTheme } from 'state/actions'
 import { getTheme } from 'state/selectors'
 import Bar from './TopBar/Bar/Bar'
 import LeftBar from './LeftBar/LeftBar'
+import MainContent from'./Main/Main'
+
 
 
 
@@ -35,8 +37,8 @@ const Main = () => {
   return (
     <AppStyleWrapper>
       <LeftBar />
-      <Bar>
-      </Bar>
+      <Bar/>
+      <MainContent/>
     </AppStyleWrapper >
 
   )
