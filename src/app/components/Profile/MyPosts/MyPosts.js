@@ -28,12 +28,10 @@ const MyPosts = () => {
         <br/>
         <div>New posts</div>
         <br/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
+        <Post message="Hi, how are you?" like=" 5 " dislike=" 1"/>
+        <br/>
+        <Post message="It's my first post" like=" 7 " dislike=" 2"/>
+
 
       </div>
     </SideBanner>
