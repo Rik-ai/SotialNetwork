@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import TopBar from './TopBar/TopBar'
 import LeftBar from './LeftBar/LeftBar'
 import Profile from'./Profile/Profile'
+import Dialogs from './Dialogs/Dialogs'
 
 
 
@@ -27,7 +28,8 @@ const Main = () => {
     <AppStyleWrapper>
       <TopBar/>
       <LeftBar />
-      <Profile/>
+      {/* <Profile/> */}
+      <Dialogs />
     </AppStyleWrapper >
 
   )

@@ -1,4 +1,4 @@
-import './index.scss'
+import './index.module.scss'
 import { ReactComponent as BellIcon } from './icons/bell.svg'
 import { ReactComponent as MessengerIcon } from './icons/messenger.svg'
 import { ReactComponent as CaretIcon } from './icons/caret.svg'
@@ -15,16 +15,16 @@ import Select from './Select/Select'
 
 
 const Ul = styled.ul`
-  z-index: 100;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+z-index: 100;
+list-style: none;
+margin: 0;
+padding: 0;
 `
-const Img=styled.img`
+const Img = styled.img`
 width:80px;
 height: 100%;
-position:relative;
-right: 1470px;
+position:sticky;
+right: 1800px;
 `
 
 function TopBar() {
