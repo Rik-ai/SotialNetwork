@@ -26,11 +26,11 @@ const LeftBar = () => {
   return (
     <SideBanner >
       <Nav>
-        <Div><a>Profile</a></Div>
-        <Div><a>Messages</a></Div>
-        <Div><a>News</a></Div>
-        <Div><a>Music</a></Div>
-        <Div><a>Settings</a></Div>
+        <Div><a href='/profile'>Profile</a></Div>
+        <Div><a href='/dialogs'>Messages</a></Div>
+        <Div><a href='/news'>News</a></Div>
+        <Div><a href='/music'>Music</a></Div>
+        <Div><a href='/settings'>Settings</a></Div>
 
       </Nav>
     </SideBanner>
