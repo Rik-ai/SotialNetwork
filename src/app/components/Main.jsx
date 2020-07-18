@@ -4,7 +4,7 @@ import TopBar from './TopBar/TopBar'
 import LeftBar from './LeftBar/LeftBar'
 import Profile from'./Profile/Profile'
 import Dialogs from './Dialogs/Dialogs'
-import { Route, BrowserRouter } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import News from './News/News'
 import Music from './Music/Music'
 import Settings from './Settings/Settings'
@@ -22,7 +22,6 @@ top: 0;
 left: 0;
 margin: 0;
 background: #151616;
-
 `
 
 
@@ -33,14 +32,14 @@ const Main = () => {
     <AppStyleWrapper>
       <TopBar/>
       <LeftBar />
-      <BrowserRouter>
-        <Route path='/profile' component={Profile}/>
-        <Route path='/dialogs' component={Dialogs}/>
-        <Route path='/news' component={News}/>
-        <Route path='/Music' component={Music}/>
-        <Route path='/settings' component={Settings}/>
 
-      </BrowserRouter>
+      <Route path='/profile' component={Profile}/>
+      <Route path='/dialogs' component={Dialogs}/>
+      <Route path='/news' component={News}/>
+      <Route path='/Music' component={Music}/>
+      <Route path='/settings' component={Settings}/>
+
+
     </AppStyleWrapper >
 
   )
