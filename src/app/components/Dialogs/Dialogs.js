@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import Users from './Users/Users'
+import UserMessages from './UserMessages/UserMessages'
 
 const Div = styled.div`
 background-color:#242526;
@@ -15,33 +17,23 @@ display: grid;
 grid-template-columns: 2fr 10fr;
 `
 
-const Messages = styled.div`
-padding: 10px;
-
-`
-const User = styled.div`
-padding: 10px;
-
-`
-
-
-
-const Dialogs =()=>{
+const Dialogs =(props)=>{
   return(
     
     <Div>
       <div>
-        <User>Ivan</User>
-        <User>Anna</User>
-        <User>Andry</User>
-        <User>Shon</User>
+        <Users name="Ivan" id="1"/>
+        <Users name="Anna" id="2"/>
+        <Users name="Andry" id="3"/>
+        <Users name="Shon" id="4"/>
+
       </div>
       
       <div>
-        <Messages>Hello</Messages>
-        <Messages>How are you ?</Messages>
-        <Messages>Wtf man?</Messages>
-        <Messages>You are the best !!</Messages>
+        <UserMessages message="Hello"/>
+        <UserMessages message="How are you ?"/>
+        <UserMessages message="Wtf man?"/>
+        <UserMessages message="You are the best !!"/>
       </div>     
     </Div>
   )
