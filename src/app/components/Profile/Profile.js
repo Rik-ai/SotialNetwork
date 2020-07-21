@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import MyPosts from './MyPosts/MyPosts'
+import ProfileInfo from './ProfileInfo/ProfileInfo'
 
 const SideBanner = styled.div`
 background-color:#242526;
@@ -15,11 +16,10 @@ font-size: 2em;
 `
 
 
-
 const Profile = () => {
   return (
     <SideBanner >
-      <div>Avatar</div>
+      <ProfileInfo/>
       <MyPosts/>
     </SideBanner>
   )

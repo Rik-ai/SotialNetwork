@@ -4,8 +4,9 @@ import styled from '@emotion/styled'
 const Img = styled.img`
 width:40px;
 `
-const Span=styled.span`
+const Span = styled.span`
 font-size:20px;
+margin:10px 5px 20px 0;
 `
 
 
