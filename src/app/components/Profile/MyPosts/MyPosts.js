@@ -24,6 +24,12 @@ margin-top:20px;
 
 
 const MyPosts = () => {
+
+  const postData = [
+    {id: 1, message: 'Hi, how are you?', likesCount: 5, dislikeCount: 1},
+    {id: 2, message: "It's my first post", likesCount: 7, dislikeCount: 2}
+  ]
+
   return (
     <SideBanner >
       <div>
@@ -41,10 +47,20 @@ const MyPosts = () => {
           
         </div>
         <PostStyle>
-          <Post message="Hi, how are you?" like=" 5 " dislike=" 1"/>
+          <Post 
+            message={postData[0].message} 
+            like={postData[0].likesCount} 
+            dislike={postData[0].dislikeCount}
+          />
+
         </PostStyle>
         <PostStyle>
-          <Post message="It's my first post" like=" 7 " dislike=" 2"/>
+          <Post 
+            message={postData[1].message}
+            like={postData[1].likesCount} 
+            dislike={postData[1].dislikeCount}
+          />
+            
         </PostStyle>
       </div>
     </SideBanner>
