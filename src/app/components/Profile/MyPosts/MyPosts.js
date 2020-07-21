@@ -23,44 +23,39 @@ margin-top:20px;
 `
 
 
-const MyPosts = () => {
+const MyPosts = (props) => {
 
   const postData = [
     {id: 1, message: 'Hi, how are you?', likesCount: 5, dislikeCount: 1},
-    {id: 2, message: "It's my first post", likesCount: 7, dislikeCount: 2}
+    {id: 2, message: "It's my first post", likesCount: 7, dislikeCount: 2},
+    {id: 1, message: 'Hi, how are you?', likesCount: 5, dislikeCount: 1},
+    {id: 1, message: 'Hi, how are you?', likesCount: 5, dislikeCount: 1}
   ]
+
+  const postElement = postData
+    .map(post => <Post message={post.message} like={post.likesCount} dislike={post.dislikeCount}/>)
 
   return (
     <SideBanner >
       <div>
         <h3>My posts:</h3>
         <div>
+
           <div>
             <textarea/>
           </div>
+
           <But>
             <button>Add post</button>
           </But>
+
           <But>
             <button>Remove post</button>
           </But>
-          
+
         </div>
         <PostStyle>
-          <Post 
-            message={postData[0].message} 
-            like={postData[0].likesCount} 
-            dislike={postData[0].dislikeCount}
-          />
-
-        </PostStyle>
-        <PostStyle>
-          <Post 
-            message={postData[1].message}
-            like={postData[1].likesCount} 
-            dislike={postData[1].dislikeCount}
-          />
-            
+          {postElement}
         </PostStyle>
       </div>
     </SideBanner>

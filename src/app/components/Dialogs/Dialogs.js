@@ -18,6 +18,7 @@ grid-template-columns: 2fr 10fr;
 `
 
 const Dialogs =(props)=>{
+  
   const userData = [
     {id: 1, name: 'Ivan'},
     {id: 2, name: 'Maria'},
@@ -35,27 +36,23 @@ const Dialogs =(props)=>{
     {id: 5, message: 'Why nobody love me ?'},
     {id: 6, message: 'Yo'}
   ]
-  
+
+  const userElements = userData
+    .map( (user)=> <Users name={user.name} id={user.id}/> )
+
+  const messagesElements = messagesData
+    .map((messages)=> <UserMessages message={messages.message}/>)
+
   return(
     
     <Div>
       <div>
-        <Users name={userData[0].name} id={userData[0].id}/>
-        <Users name={userData[1].name} id={userData[1].id}/>
-        <Users name={userData[2].name} id={userData[2].id}/>
-        <Users name={userData[3].name} id={userData[3].id}/>
-        <Users name={userData[4].name} id={userData[4].id}/>
-        <Users name={userData[5].name} id={userData[5].id}/>
+        {userElements}
 
       </div>
       
       <div>
-        <UserMessages message={messagesData[0].message}/>
-        <UserMessages message={messagesData[1].message}/>
-        <UserMessages message={messagesData[2].message}/>
-        <UserMessages message={messagesData[3].message}/>
-        <UserMessages message={messagesData[4].message}/>
-        <UserMessages message={messagesData[5].message}/>
+        {messagesElements}
       </div>     
     </Div>
   )
