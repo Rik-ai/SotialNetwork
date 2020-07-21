@@ -29,7 +29,7 @@ const LeftBar = () => {
     <SideBanner >
       <Nav>
         <Div><NavLink to='/profile'>Profile</NavLink></Div>
-        <Div><NavLink to='/dialogs'>Messages</NavLink></Div>
+        <Div><NavLink to='/dialogs'>Dialogs</NavLink></Div>
         <Div><NavLink to='/news'>News</NavLink></Div>
         <Div><NavLink to='/music'>Music</NavLink></Div>
         <Div><NavLink to='/settings'>Settings</NavLink></Div>
