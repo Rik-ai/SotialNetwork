@@ -4,13 +4,12 @@ import {NavLink} from 'react-router-dom'
 
 const SideBanner = styled.div`
 background-color:#242526;
-margin-top: 30px;
+margin: 30px 0 0 6px;
 position: absolute;
-height: 100%;
+height: 830px;
 width: 250px;
 padding: 1rem;
-border-right: 1px solid #474a4d;
-border-top: 1px solid #474a4d;
+border: 1px solid #474a4d;
 border-radius: 15px;
 color:#dadce1;
 font-size: 2em;

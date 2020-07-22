@@ -4,9 +4,9 @@ import Post from './Post/Post'
 
 const SideBanner = styled.div`
 background-color:#242526;
-margin: 450px 0 0 300px;
+margin: 450px 0 0 150px;
 height: 300px;
-width: 1000px;
+width: 1200px;
 padding: 1rem;
 border 1px solid #474a4d;
 border-radius: 15px;
