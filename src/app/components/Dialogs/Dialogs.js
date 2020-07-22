@@ -19,28 +19,12 @@ grid-template-columns: 2fr 10fr;
 
 const Dialogs =(props)=>{
   
-  const userData = [
-    {id: 1, name: 'Ivan'},
-    {id: 2, name: 'Maria'},
-    {id: 3, name: 'Andry'},
-    {id: 4, name: 'Jin'},
-    {id: 5, name: 'Viktor'},
-    {id: 6, name: 'Anna'}
-  ]
-  
-  const messagesData = [
-    {id: 1, message: 'Hello'},
-    {id: 2, message: 'How are you ?'},
-    {id: 3, message: 'Wtf man?'},
-    {id: 4, message: 'You are the best !!'},
-    {id: 5, message: 'Why nobody love me ?'},
-    {id: 6, message: 'Yo'}
-  ]
 
-  const userElements = userData
+
+  const userElements = props.userData
     .map( (user)=> <Users name={user.name} id={user.id}/> )
 
-  const messagesElements = messagesData
+  const messagesElements = props.messagesData
     .map((messages)=> <UserMessages message={messages.message}/>)
 
   return(

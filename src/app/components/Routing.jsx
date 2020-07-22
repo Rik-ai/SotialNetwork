@@ -3,13 +3,18 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 
 import Main from './Main'
 
-const Routing = () => {
+const Routing = (props) => {
 
   return (
     <Switch>
       <Route
         path='/'
-        component={Main}
+        render={()=>
+          <Main 
+            postData={props.postData}
+            userData={props.userData}
+            messagesData={props.messagesData}
+          />}
       />
       <Redirect
         to='/'

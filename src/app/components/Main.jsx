@@ -26,18 +26,22 @@ background: #151616;
 
 
 
-const Main = () => { 
+const Main = (props) => { 
 
   return (
     <AppStyleWrapper>
       <TopBar/>
       <LeftBar />
 
-      <Route path='/profile' component={Profile}/>
-      <Route path='/dialogs' component={Dialogs}/>
-      <Route path='/news' component={News}/>
-      <Route path='/Music' component={Music}/>
-      <Route path='/settings' component={Settings}/>
+      <Route path='/profile' render={()=><Profile postData={props.postData}/>}/>
+      <Route path='/dialogs' render={()=>
+        <Dialogs
+          userData={props.userData}
+          messagesData={props.messagesData}
+        />}/>
+      <Route path='/news' render={()=><News/>}/>
+      <Route path='/Music' render={()=><Music/>}/>
+      <Route path='/settings' render={()=><Settings/>}/>
 
 
     </AppStyleWrapper >

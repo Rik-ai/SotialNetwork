@@ -25,15 +25,8 @@ margin-top:20px;
 
 const MyPosts = (props) => {
 
-  const postData = [
-    {id: 1, message: 'Hi, how are you?', likesCount: 5, dislikeCount: 1},
-    {id: 2, message: "It's my first post", likesCount: 7, dislikeCount: 2},
-    {id: 1, message: 'Hi, how are you?', likesCount: 5, dislikeCount: 1},
-    {id: 1, message: 'Hi, how are you?', likesCount: 5, dislikeCount: 1}
-  ]
 
-  const postElement = postData
-    .map(post => <Post message={post.message} like={post.likesCount} dislike={post.dislikeCount}/>)
+  const postElement = props.postData.map(post => <Post message={post.message} like={post.likesCount} dislike={post.dislikeCount}/>)
 
   return (
     <SideBanner >

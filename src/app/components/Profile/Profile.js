@@ -16,11 +16,13 @@ font-size: 2em;
 `
 
 
-const Profile = () => {
+const Profile = (props) => {
+
+
   return (
     <SideBanner >
       <ProfileInfo/>
-      <MyPosts/>
+      <MyPosts postData={props.postData}/>
     </SideBanner>
   )
 }
