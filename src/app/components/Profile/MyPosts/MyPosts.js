@@ -14,12 +14,25 @@ color:#dadce1;
 font-size: 25px;
 overflow-y: auto;
 `
-const But = styled.div`
+const Button = styled.button`
 padding-left:5px;
 display: inline-block;
+font-family:inherit;
+font-size:16px;
 `
 const PostStyle = styled.div`
 margin-top:20px;
+`
+const TextArea = styled.textarea`
+font-family:inherit;
+font-size:16px;
+display:block;
+width:600px;
+min-height:30px;
+max-height:100px;
+padding: 10px 12px;
+border 1px solid #474a4d;
+resize:vertical;
 `
 
 
@@ -33,19 +46,11 @@ const MyPosts = (props) => {
       <div>
         <h3>My posts:</h3>
         <div>
-
           <div>
-            <textarea/>
+            <TextArea/>
           </div>
-
-          <But>
-            <button>Add post</button>
-          </But>
-
-          <But>
-            <button>Remove post</button>
-          </But>
-
+          <Button>Add post</Button>
+          <Button>Remove post</Button>
         </div>
         <PostStyle>
           {postElement}
