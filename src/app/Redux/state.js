@@ -1,8 +1,3 @@
-
-
-
-
-
 const state = {
   profilePage:{
     postData:[
@@ -28,6 +23,13 @@ const state = {
       {id: 4, message: 'You are the best !!'},
       {id: 5, message: 'Why nobody love me ?'},
       {id: 6, message: 'Yo'}
+    ]
+  },
+  leftBar:{
+    friendsData: [
+      {id: 1, name: 'Ivan'},
+      {id: 2, name: 'Maria'},
+      {id: 3, name: 'Andry'}
     ]
   }
   

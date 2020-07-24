@@ -8,6 +8,8 @@ import { Route } from 'react-router-dom'
 import News from './News/News'
 import Music from './Music/Music'
 import Settings from './Settings/Settings'
+import Friends from './Friends/Friends'
+
 
 
 
@@ -42,6 +44,7 @@ const Main = (props) => {
       <Route path='/news' render={()=><News/>}/>
       <Route path='/Music' render={()=><Music/>}/>
       <Route path='/settings' render={()=><Settings/>}/>
+      <Route path='/friends' render={()=><Friends friendsData={props.friendsData}/>}/>
 
 
     </AppStyleWrapper >

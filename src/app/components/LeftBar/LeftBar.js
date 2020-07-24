@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import {NavLink} from 'react-router-dom'
 
+
 const SideBanner = styled.div`
 background-color:#242526;
 margin: 30px 0 0 6px;
@@ -19,11 +20,11 @@ margin: 0 30px;
 `
 const Div = styled.div`
 padding-top:20px;
-
 `
+ 
 
+const LeftBar = (props) => {
 
-const LeftBar = () => {
   return (
     <SideBanner >
       <Nav>
@@ -32,6 +33,7 @@ const LeftBar = () => {
         <Div><NavLink to='/news'>News</NavLink></Div>
         <Div><NavLink to='/music'>Music</NavLink></Div>
         <Div><NavLink to='/settings'>Settings</NavLink></Div>
+        <Div><NavLink to='/friends'>Friends:</NavLink></Div>
 
       </Nav>
     </SideBanner>

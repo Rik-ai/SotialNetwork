@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 const Message = styled.div`
-padding: 10px;
+padding: 22px;
 `
 
 const UserMessages = (props)=>{
