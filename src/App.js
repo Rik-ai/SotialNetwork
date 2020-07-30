@@ -14,6 +14,8 @@ export const App = (props) => {
           messagesData={props.state.dialogsPage.messagesData}
           friendsData={props.state.leftBar.friendsData}
           addPost={props.addPost}
+          newPostText={props.state.profilePage.newPostText}
+          updateNewPostText={props.updateNewPostText}
         />} />
     </Router>
   )

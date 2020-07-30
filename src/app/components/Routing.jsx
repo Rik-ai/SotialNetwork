@@ -16,6 +16,8 @@ const Routing = (props) => {
             messagesData={props.messagesData}
             friendsData={props.friendsData}
             addPost={props.addPost}
+            newPostText={props.newPostText}
+            updateNewPostText={props.updateNewPostText}
           />}
       />
       <Redirect

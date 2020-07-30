@@ -7,7 +7,8 @@ const state = {
       {id: 2, message: "It's my first post", likesCount: 7, dislikeCount: 2},
       {id: 3, message: 'Hi, how are you?', likesCount: 5, dislikeCount: 1},
       {id: 4, message: 'Hi, how are you?', likesCount: 5, dislikeCount: 1}
-    ]
+    ],
+    newPostText:'Hello everybody !'
   },
   dialogsPage:{
     userData: [
@@ -36,16 +37,24 @@ const state = {
   }
 }
   
-export const addPost =(postMessage) =>{
+export const addPost =() =>{
   const newPost={
     id: 5,
-    message: postMessage,
+    message: state.profilePage.newPostText,
     likesCount: 0,
     dislikeCount: 0
   }
   state.profilePage.postData.push(newPost)
+  state.profilePage.newPostText = ''
   rerenderEntireTree(state)
 }
+
+export const updateNewPostText =(newText) =>{
+
+  state.profilePage.newPostText = newText
+  rerenderEntireTree(state)
+}
+
 
 
 export default state

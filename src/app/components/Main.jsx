@@ -30,6 +30,7 @@ background: #151616;
 
 
 const Main = (props) => { 
+
   return (
     <AppStyleWrapper>
       <TopBar/>
@@ -39,6 +40,9 @@ const Main = (props) => {
         <Profile 
           postData={props.postData} 
           addPost={addPost}
+          newPostText={props.newPostText}
+          updateNewPostText={props.updateNewPostText}
+          
         />}/>
 
       <Route path='/dialogs' render={()=>

@@ -18,13 +18,14 @@ font-size: 2em;
 
 const Profile = (props) => {
 
-
   return (
     <SideBanner >
       <ProfileInfo/>
       <MyPosts
         postData={props.postData}
         addPost={props.addPost}
+        newPostText={props.newPostText}
+        updateNewPostText={props.updateNewPostText}
       />
     </SideBanner>
   )
