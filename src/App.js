@@ -16,6 +16,8 @@ export const App = (props) => {
           addPost={props.addPost}
           newPostText={props.state.profilePage.newPostText}
           updateNewPostText={props.updateNewPostText}
+          addMessage={props.addMessage}
+          updateNewMessageText={props.updateNewMessageText}
         />} />
     </Router>
   )

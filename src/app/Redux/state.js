@@ -19,6 +19,7 @@ const state = {
       {id: 5, name: 'Viktor'},
       {id: 6, name: 'Anna'}
     ],
+   
     messagesData: [
       {id: 1, message: 'Hello'},
       {id: 2, message: 'How are you ?'},
@@ -26,7 +27,8 @@ const state = {
       {id: 4, message: 'You are the best !!'},
       {id: 5, message: 'Why nobody love me ?'},
       {id: 6, message: 'Yo'}
-    ]
+    ],
+    newMessageText:'My brain is crazy !'
   },
   leftBar:{
     friendsData: [
@@ -55,6 +57,19 @@ export const updateNewPostText =(newText) =>{
   rerenderEntireTree(state)
 }
 
+export const addMessage = () =>{
+  const newMessage={
+    message: state.dialogsPage.newMessageText
+  }
+  state.dialogsPage.messagesData.push(newMessage)
+  state.dialogsPage.newMessageText = ''
+  rerenderEntireTree(state)
+}
+
+export const updateNewMessageText = (newMessage)=>{
+  state.dialogsPage.newMessageText = newMessage
+  rerenderEntireTree(state)
+}
 
 
 export default state

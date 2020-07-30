@@ -18,6 +18,8 @@ const Routing = (props) => {
             addPost={props.addPost}
             newPostText={props.newPostText}
             updateNewPostText={props.updateNewPostText}
+            addMessage={props.addMessage}
+            updateNewMessageText={props.updateNewMessageText}
           />}
       />
       <Redirect

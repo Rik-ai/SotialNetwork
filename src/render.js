@@ -6,7 +6,7 @@ import { App } from './App'
 import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'react-redux'
 import store from 'state/store'
-import {addPost, updateNewPostText} from './app/Redux/state'
+import {addPost, updateNewPostText, addMessage, updateNewMessageText} from './app/Redux/state'
 
 
 export const rerenderEntireTree = (state) =>{
@@ -17,6 +17,8 @@ export const rerenderEntireTree = (state) =>{
           state={state} 
           addPost={addPost} 
           updateNewPostText={updateNewPostText} 
+          addMessage={addMessage}
+          updateNewMessageText={updateNewMessageText}
         />
       </AppContainer>
     </Provider>,

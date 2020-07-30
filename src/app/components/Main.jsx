@@ -49,6 +49,8 @@ const Main = (props) => {
         <Dialogs
           userData={props.userData}
           messagesData={props.messagesData}
+          addMessage={props.addMessage}
+          updateNewMessageText={props.updateNewMessageText}
         />}/>
 
       <Route path='/news' render={()=><News/>}/>
