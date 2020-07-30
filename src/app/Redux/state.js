@@ -3,8 +3,8 @@ const state = {
     postData:[
       {id: 1, message: 'Hi, how are you?', likesCount: 5, dislikeCount: 1},
       {id: 2, message: "It's my first post", likesCount: 7, dislikeCount: 2},
-      {id: 1, message: 'Hi, how are you?', likesCount: 5, dislikeCount: 1},
-      {id: 1, message: 'Hi, how are you?', likesCount: 5, dislikeCount: 1}
+      {id: 3, message: 'Hi, how are you?', likesCount: 5, dislikeCount: 1},
+      {id: 4, message: 'Hi, how are you?', likesCount: 5, dislikeCount: 1}
     ]
   },
   dialogsPage:{
@@ -32,8 +32,17 @@ const state = {
       {id: 3, name: 'Andry'}
     ]
   }
-  
-  
 }
+  
+export const addPost =(postMessage) =>{
+  const newPost={
+    id: 5,
+    message: postMessage,
+    likesCount: 0,
+    dislikeCount: 0
+  }
+  state.profilePage.postData.push(newPost)
+}
+
 
 export default state

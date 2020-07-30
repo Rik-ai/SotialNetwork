@@ -38,8 +38,14 @@ resize:vertical;
 
 const MyPosts = (props) => {
 
-
   const postElement = props.postData.map(post => <Post message={post.message} like={post.likesCount} dislike={post.dislikeCount}/>)
+
+  const newPostElement = React.createRef()
+
+  const addPost=()=>{
+    const text = newPostElement.current.value
+    props.addPost(text)
+  }
 
   return (
     <SideBanner >
@@ -47,10 +53,10 @@ const MyPosts = (props) => {
         <h3>My posts:</h3>
         <div>
           <div>
-            <TextArea/>
+            <TextArea ref={newPostElement}/>
           </div>
-          <Button>Add post</Button>
-          <Button>Remove post</Button>
+          <Button onClick={addPost}>Add post</Button>
+
         </div>
         <PostStyle>
           {postElement}

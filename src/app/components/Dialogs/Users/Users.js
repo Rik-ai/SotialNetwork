@@ -9,6 +9,12 @@ height:50px;
 
 const User = styled.div`
 padding: 10px;
+font-size: 1em;
+display: grid;
+grid-template-columns: 2fr 3fr;
+border: 1px solid #474a4d;
+border-radius: 15px;
+border-right: none;
 `
 const Users = (props)=>{
   return(

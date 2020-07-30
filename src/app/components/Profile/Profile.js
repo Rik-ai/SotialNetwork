@@ -22,7 +22,10 @@ const Profile = (props) => {
   return (
     <SideBanner >
       <ProfileInfo/>
-      <MyPosts postData={props.postData}/>
+      <MyPosts
+        postData={props.postData}
+        addPost={props.addPost}
+      />
     </SideBanner>
   )
 }

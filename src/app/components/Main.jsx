@@ -9,6 +9,7 @@ import News from './News/News'
 import Music from './Music/Music'
 import Settings from './Settings/Settings'
 import Friends from './Friends/Friends'
+import { addPost } from '../Redux/state'
 
 
 
@@ -29,18 +30,23 @@ background: #151616;
 
 
 const Main = (props) => { 
-
   return (
     <AppStyleWrapper>
       <TopBar/>
       <LeftBar />
 
-      <Route path='/profile' render={()=><Profile postData={props.postData}/>}/>
+      <Route path='/profile' render={()=>
+        <Profile 
+          postData={props.postData} 
+          addPost={addPost}
+        />}/>
+
       <Route path='/dialogs' render={()=>
         <Dialogs
           userData={props.userData}
           messagesData={props.messagesData}
         />}/>
+
       <Route path='/news' render={()=><News/>}/>
       <Route path='/Music' render={()=><Music/>}/>
       <Route path='/settings' render={()=><Settings/>}/>
