@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from '../../render'
+
 const state = {
   profilePage:{
     postData:[
@@ -42,6 +44,7 @@ export const addPost =(postMessage) =>{
     dislikeCount: 0
   }
   state.profilePage.postData.push(newPost)
+  rerenderEntireTree(state)
 }
 
 
