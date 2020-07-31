@@ -59,6 +59,7 @@ export const updateNewPostText =(newText) =>{
 
 export const addMessage = () =>{
   const newMessage={
+    id:7,
     message: state.dialogsPage.newMessageText
   }
   state.dialogsPage.messagesData.push(newMessage)

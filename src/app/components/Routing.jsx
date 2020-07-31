@@ -19,6 +19,7 @@ const Routing = (props) => {
             newPostText={props.newPostText}
             updateNewPostText={props.updateNewPostText}
             addMessage={props.addMessage}
+            newMessageText={props.newMessageText}
             updateNewMessageText={props.updateNewMessageText}
           />}
       />

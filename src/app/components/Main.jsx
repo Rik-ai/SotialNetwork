@@ -50,6 +50,7 @@ const Main = (props) => {
           userData={props.userData}
           messagesData={props.messagesData}
           addMessage={props.addMessage}
+          newMessageText={props.newMessageText}
           updateNewMessageText={props.updateNewMessageText}
         />}/>
 

@@ -37,7 +37,7 @@ resize:vertical;
 
 
 const MyPosts = (props) => {
-
+ 
   const postElement = props.postData.map(post => <Post message={post.message} like={post.likesCount} dislike={post.dislikeCount}/>)
 
   const newPostElement = React.createRef()

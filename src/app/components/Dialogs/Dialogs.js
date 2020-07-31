@@ -47,7 +47,7 @@ font-size: 2em;
 `
 
 const Dialogs =(props)=>{
-  console.log(props)
+
   const newDialogsElement = React.createRef()
   
   const addMessage = ()=>{
