@@ -1,7 +1,7 @@
 import React from 'react'
 import { Router, Route } from 'react-router-dom'
 import history from 'shared/utils/history'
-import Routing from './app/components/Routing'
+import Routing from './app/components/Main'
 
 export const App = (props) => {
 

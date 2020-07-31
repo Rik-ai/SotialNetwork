@@ -1,19 +1,15 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 import styled from '@emotion/styled'
+
 import TopBar from './TopBar/TopBar'
 import LeftBar from './LeftBar/LeftBar'
 import Profile from'./Profile/Profile'
 import Dialogs from './Dialogs/Dialogs'
-import { Route } from 'react-router-dom'
 import News from './News/News'
 import Music from './Music/Music'
 import Settings from './Settings/Settings'
 import Friends from './Friends/Friends'
-import { addPost } from '../Redux/state'
-
-
-
-
 
 
 const AppStyleWrapper = styled.div`
@@ -39,7 +35,7 @@ const Main = (props) => {
       <Route path='/profile' render={()=>
         <Profile 
           postData={props.postData} 
-          addPost={addPost}
+          addPost={props.addPost}
           newPostText={props.newPostText}
           updateNewPostText={props.updateNewPostText}
           
