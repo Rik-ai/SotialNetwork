@@ -47,16 +47,16 @@ font-size: 2em;
 `
 
 const Dialogs =(props)=>{
-
+  console.log(props)
   const newDialogsElement = React.createRef()
   
   const addMessage = ()=>{
-    props.addMessage()
+    props.dispatch({type:'ADD-MESSAGE'})
   }
 
   const onMessageChange =()=>{
     const text = newDialogsElement.current.value
-    props.updateNewMessageText(text)
+    props.dispatch({type:'UPDATE-NEW-MESSAGE-TEXT', newMessage: text})
   }
 
   const userElements = props.userData

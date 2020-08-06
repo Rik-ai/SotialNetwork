@@ -23,9 +23,8 @@ const Profile = (props) => {
       <ProfileInfo/>
       <MyPosts
         postData={props.postData}
-        addPost={props.addPost}
+        dispatch={props.dispatch}
         newPostText={props.newPostText}
-        updateNewPostText={props.updateNewPostText}
       />
     </SideBanner>
   )

@@ -14,12 +14,11 @@ const Routing = (props) => {
             userData={props.userData}
             messagesData={props.messagesData}
             friendsData={props.friendsData}
-            addPost={props.addPost}
+           
+            dispatch={props.dispatch}
             newPostText={props.newPostText}
-            updateNewPostText={props.updateNewPostText}
-            addMessage={props.addMessage}
             newMessageText={props.newMessageText}
-            updateNewMessageText={props.updateNewMessageText}
+            
           />}
       />
       <Redirect

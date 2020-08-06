@@ -35,19 +35,18 @@ const Main = (props) => {
       <Route path='/profile' render={()=>
         <Profile 
           postData={props.postData} 
-          addPost={props.addPost}
+          dispatch={props.dispatch}
           newPostText={props.newPostText}
-          updateNewPostText={props.updateNewPostText}
-          
+                   
         />}/>
 
       <Route path='/dialogs' render={()=>
         <Dialogs
           userData={props.userData}
           messagesData={props.messagesData}
-          addMessage={props.addMessage}
+          dispatch={props.dispatch}
           newMessageText={props.newMessageText}
-          updateNewMessageText={props.updateNewMessageText}
+          
         />}/>
 
       <Route path='/news' render={()=><News/>}/>

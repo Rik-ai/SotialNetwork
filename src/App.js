@@ -4,7 +4,7 @@ import history from 'shared/utils/history'
 import Routing from './app/components/Main'
 
 export const App = (props) => {
-
+  console.log(props)
   return (
     <Router history={history}>
       <Route path='/' render={()=>
@@ -13,12 +13,11 @@ export const App = (props) => {
           userData={props.state.dialogsPage.userData}
           messagesData={props.state.dialogsPage.messagesData}
           friendsData={props.state.leftBar.friendsData}
-          addPost={props.addPost}
+          
+          dispatch={props.dispatch}
           newPostText={props.state.profilePage.newPostText}
-          updateNewPostText={props.updateNewPostText}
-          addMessage={props.addMessage}
           newMessageText={props.state.dialogsPage.newMessageText}
-          updateNewMessageText={props.updateNewMessageText}
+          
         />} />
     </Router>
   )

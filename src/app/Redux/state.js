@@ -37,43 +37,80 @@ const store ={
       ]
     }
   },
+  _rerenderEntireTree (){
+    console.log('state was changed')
+  },
+
+
   getState(){
     return this._state
   },
-  rerenderEntireTree (){
-    console.log('state was changed')
-  },
-  addPost (){
-    const newPost={
-      id: 5,
-      message: this._state.profilePage.newPostText,
-      likesCount: 0,
-      dislikeCount: 0
-    }
-    this._state.profilePage.postData.push(newPost)
-    this._state.profilePage.newPostText = ''
-    this._rerenderEntireTree(this._state)
-  },
-  updateNewPostText (newText){
-
-    this._state.profilePage.newPostText = newText
-    this._rerenderEntireTree(this._state)
-  },
-  addMessage  (){
-    const newMessage={
-      id:7,
-      message: this._state.dialogsPage.newMessageText
-    }
-    this._state.dialogsPage.messagesData.push(newMessage)
-    this._state.dialogsPage.newMessageText = ''
-    this._rerenderEntireTree(this._state)
-  },
-  updateNewMessageText  (newMessage){
-    this._state.dialogsPage.newMessageText = newMessage
-    this._rerenderEntireTree(this._state)
-  },
   subscribe (observer) {
     this._rerenderEntireTree = observer
+  },
+
+
+  // addPost (){
+  //   const newPost={
+  //     id: 5,
+  //     message: this._state.profilePage.newPostText,
+  //     likesCount: 0,
+  //     dislikeCount: 0
+  //   }
+  //   this._state.profilePage.postData.push(newPost)
+  //   this._state.profilePage.newPostText = ''
+  //   this._rerenderEntireTree(this._state)
+  // },
+  // updateNewPostText (newText){
+
+  //   this._state.profilePage.newPostText = newText
+  //   this._rerenderEntireTree(this._state)
+  // },
+
+  // addMessage  (){
+  //   const newMessage={
+  //     id:7,
+  //     message: this._state.dialogsPage.newMessageText
+  //   }
+  //   this._state.dialogsPage.messagesData.push(newMessage)
+  //   this._state.dialogsPage.newMessageText = ''
+  //   this._rerenderEntireTree(this._state)
+  // },
+  // updateNewMessageText  (newMessage){
+  //   this._state.dialogsPage.newMessageText = newMessage
+  //   this._rerenderEntireTree(this._state)
+  // },
+
+  dispatch(action){
+
+    if (action.type ==='ADD-POST'){
+      const newPost={
+        id: 5,
+        message: this._state.profilePage.newPostText,
+        likesCount: 0,
+        dislikeCount: 0
+      }
+      this._state.profilePage.postData.push(newPost)
+      this._state.profilePage.newPostText = ''
+      this._rerenderEntireTree(this._state)
+
+    }else if(action.type ==='UPDATE-NEW-POST-TEXT'){
+      this._state.profilePage.newPostText = action.newText
+      this._rerenderEntireTree(this._state)
+
+    } else if (action.type==='ADD-MESSAGE'){
+      const newMessage={
+        id:7,
+        message: this._state.dialogsPage.newMessageText
+      }
+      this._state.dialogsPage.messagesData.push(newMessage)
+      this._state.dialogsPage.newMessageText = ''
+      this._rerenderEntireTree(this._state)
+      
+    }else if(action.type==='UPDATE-NEW-MESSAGE-TEXT'){
+      this._state.dialogsPage.newMessageText = action.newMessage
+      this._rerenderEntireTree(this._state)
+    }
   }
 }
 
