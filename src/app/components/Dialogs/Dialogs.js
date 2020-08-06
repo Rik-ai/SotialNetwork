@@ -51,14 +51,13 @@ font-size: 2em;
 
 const Dialogs =(props)=>{
   console.log(props)
-  const newDialogsElement = React.createRef()
   
   const addMessage = ()=>{
     props.dispatch(addMessageActionCreator())
   }
 
-  const onMessageChange =()=>{
-    const text = newDialogsElement.current.value
+  const onMessageChange =(event)=>{
+    const text = event.target.value
     props.dispatch(updateNewMessageTextActionCreator(text))
   }
 
@@ -83,7 +82,11 @@ const Dialogs =(props)=>{
       
       </Div>
       <Div2> 
-        <TextArea onChange={onMessageChange} ref={newDialogsElement} value={props.newMessageText}/>
+        <TextArea
+          onChange={onMessageChange}
+          placeholder='Enter your message...' 
+          value={props.newMessageText}
+        />
         <Button onClick={addMessage}>Send message</Button>
       </Div2>
     </div>
