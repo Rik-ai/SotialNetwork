@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import Users from './Users/Users'
 import UserMessages from './UserMessages/UserMessages'
+import { updateNewMessageTextActionCreator, addMessageActionCreator } from '../../Redux/state'
 
 const Div = styled.div`
 background-color:#242526;
@@ -46,17 +47,19 @@ color: #dadce1;
 font-size: 2em;
 `
 
+
+
 const Dialogs =(props)=>{
   console.log(props)
   const newDialogsElement = React.createRef()
   
   const addMessage = ()=>{
-    props.dispatch({type:'ADD-MESSAGE'})
+    props.dispatch(addMessageActionCreator())
   }
 
   const onMessageChange =()=>{
     const text = newDialogsElement.current.value
-    props.dispatch({type:'UPDATE-NEW-MESSAGE-TEXT', newMessage: text})
+    props.dispatch(updateNewMessageTextActionCreator(text))
   }
 
   const userElements = props.userData

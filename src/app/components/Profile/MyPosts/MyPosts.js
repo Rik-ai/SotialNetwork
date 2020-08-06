@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import Post from './Post/Post'
+import { updateNewPostTextActionCreator, addPostActionCreator } from '../../../Redux/state'
 
 const SideBanner = styled.div`
 background-color:#242526;
@@ -36,6 +37,8 @@ resize:vertical;
 `
 
 
+
+
 const MyPosts = (props) => {
  
   const postElement = props.postData.map(post => <Post message={post.message} like={post.likesCount} dislike={post.dislikeCount}/>)
@@ -43,12 +46,13 @@ const MyPosts = (props) => {
   const newPostElement = React.createRef()
 
   const addPost=()=>{
-    props.dispatch({type:'ADD-POST'})
+    props.dispatch(addPostActionCreator())
   }
 
   const onPostChange = ()=>{
     const text = newPostElement.current.value
-    props.dispatch({type:'UPDATE-NEW-POST-TEXT',newText: text })
+    //props.dispatch({type:'UPDATE-NEW-POST-TEXT',newText: text })
+    props.dispatch(updateNewPostTextActionCreator(text))
   }
 
   return (
