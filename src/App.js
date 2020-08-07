@@ -9,14 +9,14 @@ export const App = (props) => {
     <Router history={history}>
       <Route path='/' render={()=>
         <Routing
-          postData={props.state.profilePage.postData}  
-          userData={props.state.dialogsPage.userData}
-          messagesData={props.state.dialogsPage.messagesData}
-          friendsData={props.state.leftBar.friendsData}
+          postData={props.state.profilePageReducer.postData}  
+          userData={props.state.dialogsPageReducer.userData}
+          messagesData={props.state.dialogsPageReducer.messagesData}
+          friendsData={props.state.leftBarReducer.friendsData}
           
           dispatch={props.dispatch}
-          newPostText={props.state.profilePage.newPostText}
-          newMessageText={props.state.dialogsPage.newMessageText}
+          newPostText={props.state.profilePageReducer.newPostText}
+          newMessageText={props.state.dialogsPageReducer.newMessageText}
           
         />} />
     </Router>

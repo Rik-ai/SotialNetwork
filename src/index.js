@@ -4,7 +4,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { App } from './App'
 import { AppContainer } from 'react-hot-loader'
-import store from './app/Redux/state'
+import store from './app/Redux/ReduxStore'
 import { BrowserRouter } from 'react-router-dom'
 
 
@@ -26,4 +26,8 @@ const rerenderEntireTree = (state) =>{
 
 rerenderEntireTree(store.getState())
 
-store.subscribe(rerenderEntireTree)
+store.subscribe(()=>{
+  const state = store.getState()
+  rerenderEntireTree(state)
+
+})
