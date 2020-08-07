@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import Users from './Users/Users'
 import UserMessages from './UserMessages/UserMessages'
-import { updateNewMessageTextActionCreator, addMessageActionCreator } from '../../Redux/state'
+import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../../Redux/Reducer/DialogsPageReducer'
 
 const Div = styled.div`
 background-color:#242526;

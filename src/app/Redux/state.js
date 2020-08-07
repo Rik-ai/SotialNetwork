@@ -1,7 +1,6 @@
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
-const ADD_MESSAGE = 'ADD-MESSAGE'
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'
+import profilePageReducer from './Reducer/ProfilePageReducer'
+import dialogsPageReducer from './Reducer/DialogsPageReducer'
+import leftBarReducer from './Reducer/LeftBarReducer'
 
 const store ={
   _state: {
@@ -45,8 +44,6 @@ const store ={
   _rerenderEntireTree (){
     console.log('state was changed')
   },
-
-
   getState(){
     return this._state
   },
@@ -88,42 +85,13 @@ const store ={
 
   dispatch(action){
 
-    if (action.type === ADD_POST){
-      const newPost={
-        id: 5,
-        message: this._state.profilePage.newPostText,
-        likesCount: 0,
-        dislikeCount: 0
-      }
-      this._state.profilePage.postData.push(newPost)
-      this._state.profilePage.newPostText = ''
-      this._rerenderEntireTree(this._state)
-
-    }else if(action.type === UPDATE_NEW_POST_TEXT){
-      this._state.profilePage.newPostText = action.newText
-      this._rerenderEntireTree(this._state)
-
-    } else if (action.type===ADD_MESSAGE){
-      const newMessage={
-        id:7,
-        message: this._state.dialogsPage.newMessageText
-      }
-      this._state.dialogsPage.messagesData.push(newMessage)
-      this._state.dialogsPage.newMessageText = ''
-      this._rerenderEntireTree(this._state)
-
-    }else if(action.type===UPDATE_NEW_MESSAGE_TEXT){
-      this._state.dialogsPage.newMessageText = action.newMessage
-      this._rerenderEntireTree(this._state)
-    }
+    this._state.profilePage = profilePageReducer(this._state.profilePage, action)
+    this._state.dialogsPage = dialogsPageReducer(this._state.dialogsPage, action)
+    this._state.leftBar = leftBarReducer(this._state.leftBar, action)
+    
+    this._rerenderEntireTree(this._state)
   }
 }
-export const addPostActionCreator=()=>({type:ADD_POST})
-export const updateNewPostTextActionCreator=(text)=>
-  ({type:UPDATE_NEW_POST_TEXT,newText:text})
 
-export const addMessageActionCreator = ()=>({type:ADD_MESSAGE})
-export const updateNewMessageTextActionCreator = (text)=>
-  ({type:UPDATE_NEW_MESSAGE_TEXT,newMessage: text})
 
 export default store

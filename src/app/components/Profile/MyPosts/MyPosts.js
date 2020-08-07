@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import Post from './Post/Post'
-import { updateNewPostTextActionCreator, addPostActionCreator } from '../../../Redux/state'
+import { updateNewPostTextActionCreator, addPostActionCreator } from '../../../Redux/Reducer/ProfilePageReducer'
 
 const SideBanner = styled.div`
 background-color:#242526;
