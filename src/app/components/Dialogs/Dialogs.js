@@ -85,7 +85,7 @@ const Dialogs =(props)=>{
         <TextArea
           onChange={onMessageChange}
           placeholder='Enter your message...' 
-          value={props.newMessageText}
+          value={state.newMessageText}
         />
         <Button onClick={addMessage}>Send message</Button>
       </Div2>
