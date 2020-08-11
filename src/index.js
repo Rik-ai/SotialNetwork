@@ -10,12 +10,14 @@ import { BrowserRouter } from 'react-router-dom'
 
 
 const rerenderEntireTree = (state) =>{
+ 
   ReactDOM.render(
     <BrowserRouter>
       <AppContainer>
         <App
           state={state} 
           dispatch={store.dispatch.bind(store)} 
+          store={store}
         />
       </AppContainer>
     </BrowserRouter>,

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from '@emotion/styled'
 import Users from './Users/Users'
 import UserMessages from './UserMessages/UserMessages'
-import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../../Redux/Reducer/DialogsPageReducer'
 
 const Div = styled.div`
 background-color:#242526;
@@ -50,20 +49,22 @@ font-size: 2em;
 
 
 const Dialogs =(props)=>{
-  
+  console.log(props)
+  const state = props.dialogsPage.dialogsPageReducer
+
   const addMessage = ()=>{
-    props.dispatch(addMessageActionCreator())
+    props.addNewMessage()
   }
 
   const onMessageChange =(event)=>{
     const text = event.target.value
-    props.dispatch(updateNewMessageTextActionCreator(text))
+    props.updateNewMessageText(text)
   }
 
-  const userElements = props.userData
+  const userElements = state.userData
     .map( (user)=> <Users name={user.name} id={user.id}/> )
 
-  const messagesElements = props.messagesData
+  const messagesElements = state.messagesData
     .map((messages)=> <UserMessages message={messages.message}/>)
 
   return(

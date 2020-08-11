@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import MyPosts from './MyPosts/MyPosts'
+import MyPostsContainer from './MyPosts/MyPostsContainer'
 import ProfileInfo from './ProfileInfo/ProfileInfo'
 
 const SideBanner = styled.div`
@@ -17,15 +17,11 @@ font-size: 2em;
 
 
 const Profile = (props) => {
-
+    
   return (
     <SideBanner >
       <ProfileInfo/>
-      <MyPosts
-        postData={props.postData}
-        dispatch={props.dispatch}
-        newPostText={props.newPostText}
-      />
+      <MyPostsContainer store={props.store}/>
     </SideBanner>
   )
 }
