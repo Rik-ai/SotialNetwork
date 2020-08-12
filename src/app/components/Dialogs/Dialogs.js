@@ -49,23 +49,23 @@ font-size: 2em;
 
 
 const Dialogs =(props)=>{
-  console.log(props)
-  const state = props.dialogsPage.dialogsPageReducer
 
-  const addMessage = ()=>{
-    props.addNewMessage()
-  }
-
-  const onMessageChange =(event)=>{
-    const text = event.target.value
-    props.updateNewMessageText(text)
-  }
+  const state = props.dialogsPage
 
   const userElements = state.userData
     .map( (user)=> <Users name={user.name} id={user.id}/> )
 
   const messagesElements = state.messagesData
     .map((messages)=> <UserMessages message={messages.message}/>)
+    
+  const addMessage = ()=>{
+    props.addNewMessage()
+  }
+  
+  const onMessageChange =(event)=>{
+    const text = event.target.value
+    props.updateNewMessageText(text)
+  }
 
   return(
     <div>

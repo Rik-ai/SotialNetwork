@@ -6,7 +6,7 @@ import { App } from './App'
 import { AppContainer } from 'react-hot-loader'
 import store from './app/Redux/ReduxStore'
 import { BrowserRouter } from 'react-router-dom'
-import { Provider } from './StoreContext'
+import { Provider } from 'react-redux'
 
 
 
