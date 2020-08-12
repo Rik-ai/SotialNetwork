@@ -21,7 +21,7 @@ const Profile = (props) => {
   return (
     <SideBanner >
       <ProfileInfo/>
-      <MyPostsContainer store={props.store}/>
+      <MyPostsContainer/>
     </SideBanner>
   )
 }

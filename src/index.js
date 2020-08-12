@@ -6,6 +6,7 @@ import { App } from './App'
 import { AppContainer } from 'react-hot-loader'
 import store from './app/Redux/ReduxStore'
 import { BrowserRouter } from 'react-router-dom'
+import Provider from './StoreContext'
 
 
 
@@ -14,11 +15,9 @@ const rerenderEntireTree = (state) =>{
   ReactDOM.render(
     <BrowserRouter>
       <AppContainer>
-        <App
-          state={state} 
-          dispatch={store.dispatch.bind(store)} 
-          store={store}
-        />
+        <Provider value ={props.store}>
+          <App/>
+        </Provider>
       </AppContainer>
     </BrowserRouter>,
     document.getElementById('root')

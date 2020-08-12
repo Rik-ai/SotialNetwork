@@ -31,14 +31,14 @@ const Main = (props) => {
       <TopBar/>
       <LeftBar />
 
-      <Route path='/profile' render={()=> <Profile store={props.store}/>}/>
+      <Route path='/profile' render={()=> <Profile />}/>
 
-      <Route path='/dialogs' render={()=> <DialogsContainer store={props.store}/>}/>
+      <Route path='/dialogs' render={()=> <DialogsContainer/>}/>
 
       <Route path='/news' render={()=> <News/>}/>
       <Route path='/Music' render={()=> <Music/>}/>
       <Route path='/settings' render={()=> <Settings/>}/>
-      <Route path='/friends' render={()=> <Friends friendsData={props.friendsData}/>}/>
+      <Route path='/friends' render={()=> <Friends/>}/>
 
 
     </AppStyleWrapper >

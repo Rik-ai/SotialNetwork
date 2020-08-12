@@ -8,10 +8,7 @@ export const App = (props) => {
   return (
     <Router history={history}>
       <Route path='/' render={()=>
-        <Main
-          store={props.store}
-          friendsData={props.state.leftBarReducer.friendsData}
-        />} />
+        <Main/>} />
     </Router>
   )
 }
