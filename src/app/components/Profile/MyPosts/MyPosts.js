@@ -39,7 +39,6 @@ resize:vertical;
 
 
 const MyPosts = (props) => {
-  console.log(props)
 
   const postElement = props.postData.map(post => <Post message={post.message} like={post.likesCount} dislike={post.dislikeCount}/>)
 

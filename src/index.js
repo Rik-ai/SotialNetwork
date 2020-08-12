@@ -9,24 +9,14 @@ import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
 
+ReactDOM.render(
+  <BrowserRouter>
+    <AppContainer>
+      <Provider store ={store}>
+        <App/>
+      </Provider>
+    </AppContainer>
+  </BrowserRouter>,
+  document.getElementById('root')
+)
 
-const rerenderEntireTree = () =>{
- 
-  ReactDOM.render(
-    <BrowserRouter>
-      <AppContainer>
-        <Provider store ={store}>
-          <App/>
-        </Provider>
-      </AppContainer>
-    </BrowserRouter>,
-    document.getElementById('root')
-  )
-}
-  
-
-rerenderEntireTree()
-
-store.subscribe(()=>{
-  rerenderEntireTree()
-})
