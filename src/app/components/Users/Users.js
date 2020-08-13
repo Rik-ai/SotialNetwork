@@ -7,10 +7,13 @@ margin: 30px 0 0 300px;
 height: 830px;
 width: 1530px;
 padding: 1rem;
-border 1px solid #474a4d;
+border: 1px solid #474a4d;
 border-radius: 15px;
-color:#dadce1;
-font-size: 2em;
+color: #dadce1;
+font-size: 25px;
+display: grid;
+grid-template-columns: 2fr 2fr;
+overflow-y: auto;
 `
 const Img = styled.img`
 width:50px;
@@ -37,29 +40,21 @@ const Users =(props)=>{
   return(
     <Div>
       {
-        props.users.map( user => <div key ={user.id}>
-          <span>
-            <div>
-              <Img src={user.photoUrl} />
-            </div>
+        props.users.map( user => 
+          <div key ={user.id}>
+            <Img src={user.photoUrl} />
             <div>
               {user.followed 
                 ? <button onClick={()=>{props.unfollow(user.id)}}>Unfollow</button>
                 : <button onClick={()=>{props.follow(user.id)}}>Follow</button>}
             </div>
-          </span>
 
-          <span>
-            <span>
-              <div>{user.fullName}</div>
-              <div>{user.status}</div>
-            </span>
-            <span>
-              <div>{user.location.country}</div>
-              <div>{user.location.city}</div>
-            </span>
-          </span>
-        </div>)
+            <span>{user.fullName}</span>
+            <div>Status: {user.status}</div>
+            <div>Country: {user.location.country}</div>
+            <div>City: {user.location.city}</div>
+          </div>
+        )
       }
     </Div>
   )
