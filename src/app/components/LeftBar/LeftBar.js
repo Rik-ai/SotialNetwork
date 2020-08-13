@@ -34,6 +34,7 @@ const LeftBar = (props) => {
         <Div><NavLink to='/music'>Music</NavLink></Div>
         <Div><NavLink to='/settings'>Settings</NavLink></Div>
         <Div><NavLink to='/friends'>Friends:</NavLink></Div>
+        <Div><NavLink to='/users'>Find users:</NavLink></Div>
 
       </Nav>
     </SideBanner>

@@ -12,12 +12,6 @@ const initialState = {
 }
 
 const profilePageReducer = (state = initialState,action) =>{
-  
-  const stateCopy = {
-    ...state,
-    postData: [...state.postData]
-  }
-    
   switch(action.type){
     case ADD_POST: {
       return {

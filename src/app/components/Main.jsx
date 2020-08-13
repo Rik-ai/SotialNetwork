@@ -10,6 +10,7 @@ import Music from './Music/Music'
 import Settings from './Settings/Settings'
 import Friends from './Friends/Friends'
 import DialogsContainer from './Dialogs/DialogsContainer'
+import UsersContainer from './Users/UsersContainer'
 
 
 const AppStyleWrapper = styled.div`
@@ -32,11 +33,11 @@ const Main = (props) => {
       <LeftBar />
 
       <Route path='/profile' render={()=> <Profile />}/>
-
       <Route path='/dialogs' render={()=> <DialogsContainer/>}/>
+      <Route path='/users' render={()=> <UsersContainer/>}/>
 
       <Route path='/news' render={()=> <News/>}/>
-      <Route path='/Music' render={()=> <Music/>}/>
+      <Route path='/music' render={()=> <Music/>}/>
       <Route path='/settings' render={()=> <Settings/>}/>
       <Route path='/friends' render={()=> <Friends/>}/>
 
