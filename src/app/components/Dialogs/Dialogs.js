@@ -53,10 +53,10 @@ const Dialogs =(props)=>{
   const state = props.dialogsPage
 
   const userElements = state.userData
-    .map( (user)=> <Users name={user.name} id={user.id}/> )
+    .map( (user)=> <Users name={user.name} key={user.id} id={user.id}/> )
 
   const messagesElements = state.messagesData
-    .map((messages)=> <UserMessages message={messages.message}/>)
+    .map((messages)=> <UserMessages message={messages.message} key={messages.id}/>)
     
   const addMessage = ()=>{
     props.addNewMessage()
