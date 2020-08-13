@@ -16,8 +16,14 @@ grid-template-columns: 2fr 2fr;
 overflow-y: auto;
 `
 const Img = styled.img`
-width:50px;
-height:50px;
+width:100px;
+height:100px;
+`
+const Button = styled.button`
+padding-left:5px;
+display: inline-block;
+font-family:inherit;
+font-size:20px;
 `
 
 const Users =(props)=>{
@@ -44,15 +50,16 @@ const Users =(props)=>{
           <div key ={user.id}>
             <Img src={user.photoUrl} />
             <div>
+              <div>{user.fullName}</div>
+              <div>Status: {user.status}</div>
+              <div>Country: {user.location.country}</div>
+              <div>City: {user.location.city}</div>
               {user.followed 
-                ? <button onClick={()=>{props.unfollow(user.id)}}>Unfollow</button>
-                : <button onClick={()=>{props.follow(user.id)}}>Follow</button>}
+                ? <Button onClick={()=>{props.unfollow(user.id)}}>Unfollow</Button>
+                : <Button onClick={()=>{props.follow(user.id)}}>Follow</Button>}
             </div>
 
-            <span>{user.fullName}</span>
-            <div>Status: {user.status}</div>
-            <div>Country: {user.location.country}</div>
-            <div>City: {user.location.city}</div>
+             
           </div>
         )
       }
