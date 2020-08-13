@@ -41,7 +41,7 @@ const dialogsPageReducer = (state = initialState,action) =>{
     case UPDATE_NEW_MESSAGE_TEXT:{
       const stateCopy = {...state}
       stateCopy.newMessageText = action.newMessage
-      return state
+      return stateCopy
     }
     default:
       return state
