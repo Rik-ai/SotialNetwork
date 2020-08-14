@@ -30,43 +30,43 @@ font-family:inherit;
 font-size:20px;
 `
 
-const Users =(props)=>{
+class Users extends React.Component {
 
-  const getUsers = () =>{
-    if (props.users.length ===0){
-      axios.get('https://social-network.samuraijs.com/api/1.0/users')
-        .then(response => {
-          props.setUsers(response.data.items)
-        })
-    }
+  constructor(props){
+    super(props)
+    
+    axios.get('https://social-network.samuraijs.com/api/1.0/users')
+      .then(response => {
+        this.props.setUsers(response.data.items)
+      })
   }
 
+
+  render() {
+    return(
+      <Div>
+        {
+          this.props.users.map( user => 
+            <div key ={user.id}>
+              <Img src={user.photos.small != null ? user.photos.small : userPhoto} />
+              <div>
+                <div>{user.name}</div>
+                <div>Status: {user.status}</div>
+                <div>Country: {'user.location.country'}</div>
+                <div>City: {'user.location.city'}</div>
+                {user.followed 
+                  ? <Button onClick={()=>{this.props.unfollow(user.id)}}>Unfollow</Button>
+                  : <Button onClick={()=>{this.props.follow(user.id)}}>Follow</Button>}
+              </div>
   
-
-  return(
-    <Div>
-      <Button onClick ={getUsers}>Get Users</Button>
-      {
-        props.users.map( user => 
-          <div key ={user.id}>
-            <Img src={user.photos.small != null ? user.photos.small : userPhoto} />
-            <div>
-              <div>{user.name}</div>
-              <div>Status: {user.status}</div>
-              <div>Country: {'user.location.country'}</div>
-              <div>City: {'user.location.city'}</div>
-              {user.followed 
-                ? <Button onClick={()=>{props.unfollow(user.id)}}>Unfollow</Button>
-                : <Button onClick={()=>{props.follow(user.id)}}>Follow</Button>}
+               
             </div>
-
-             
-          </div>
-        )
-      }
-    </Div>
-  )
-
+          )
+        }
+      </Div>
+    )
+  }
 }
+
 
 export default Users
