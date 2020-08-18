@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import * as axios from 'axios'
 import userPhoto from '../../assets/images/images.png'
+import styles from './styles.module.css'
 
 const Div = styled.div`
 background-color:#242526;
@@ -32,63 +32,42 @@ font-size:20px;
 `
 
 
-class Users extends React.Component {
-
-  componentDidMount(){
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
-      .then(response => {
-        this.props.setUsers(response.data.items)
-        this.props.setTotalUsersCount(response.data.totalCount)
-      })
+const Users = (props)=> {
+  const pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
+  const pages = []
+  for(let i=1; i <= pagesCount; i++){ 
+    pages.push(i)
   }
+  return(
+    <Div>
+      <div>
+        {pages.map(pages=>{
+          return <span className = {props.currentPage === pages && styles.selectedPage} //не работает выделение страницы, потом доработать
+            onClick ={(e)=>{props.onPageChanged(pages)}} >{pages}
+          </span> 
+        })}
 
-  onPageChanged = (pageNumber) => {
-    this.props.setCurrentPage(pageNumber)
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
-      .then(response => {
-        this.props.setUsers(response.data.items)
-      })
-  }
-
-
-  render() {
-
-    const pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize)
-    const pages = []
-    for(let i=1; i <= pagesCount; i++){ 
-      pages.push(i)
-    }
-
-    return(
-      <Div>
-        <div>
-          {pages.map(pages=>{
-            // className = {this.props.currentPage === pages && styles.selectedPage}
-            return <span onClick ={(e)=>{this.onPageChanged(pages)}} >{pages}</span> //Стилизовать выделение страницы
-          })}
-
-        </div>
-        {
-          this.props.users.map( user => 
-            <div key ={user.id}>
-              <Img src={user.photos.small != null ? user.photos.small : userPhoto} />
-              <div>
-                <div>{user.name}</div>
-                <div>Status: {user.status}</div>
-                <div>Country: {'user.location.country'}</div>
-                <div>City: {'user.location.city'}</div>
-                {user.followed 
-                  ? <Button onClick={()=>{this.props.unfollow(user.id)}}>Unfollow</Button>
-                  : <Button onClick={()=>{this.props.follow(user.id)}}>Follow</Button>}
-              </div>
+      </div>
+      {
+        props.users.map( user => 
+          <div key ={user.id}>
+            <Img src={user.photos.small != null ? user.photos.small : userPhoto} />
+            <div>
+              <div>{user.name}</div>
+              <div>Status: {user.status}</div>
+              <div>Country: {'user.location.country'}</div>
+              <div>City: {'user.location.city'}</div>
+              {user.followed 
+                ? <Button onClick={()=>{props.unfollow(user.id)}}>Unfollow</Button>
+                : <Button onClick={()=>{props.follow(user.id)}}>Follow</Button>}
+            </div>
   
                
-            </div>
-          )
-        }
-      </Div>
-    )
-  }
+          </div>
+        )
+      }
+    </Div>
+  )
 }
 
 
