@@ -5,16 +5,21 @@ import {
   unfollowActionCreator,
   setUsersActionCreator, 
   setCurrentPageActionCreator,
-  setUsersTotalCountActionCreator 
+  setUsersTotalCountActionCreator, 
+  toogleIsFetchingActionCreator
 } from '../../Redux/Reducer/UsersPageReducer'
 import * as axios from 'axios'
 import Users from './Users'
+import Preloader from '../common/Preloader/Preloader'
+
 
 class UsersAPIContainer extends React.Component {
 
   componentDidMount(){
+    this.props.toogleIsFetching(true)
     axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
       .then(response => {
+        this.props.toogleIsFetching(true)
         this.props.setUsers(response.data.items)
         this.props.setTotalUsersCount(response.data.totalCount)
       })
@@ -22,14 +27,19 @@ class UsersAPIContainer extends React.Component {
 
   onPageChanged = (pageNumber) => {
     this.props.setCurrentPage(pageNumber)
+    this.props.toogleIsFetching(true)
     axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
       .then(response => {
+        this.props.toogleIsFetching(true)
         this.props.setUsers(response.data.items)
       })
   }
 
   render() { 
-    return<Users
+    return <>
+    {this.props.isFetching ? <Preloader/> : null}
+     
+    <Users
       totalUsersCount={this.props.totalUsersCount}
       pageSize={this.props.pageSize}
       currentPage={this.props.currentPage}
@@ -38,6 +48,7 @@ class UsersAPIContainer extends React.Component {
       unfollow={this.props.unfollow}
       follow={this.props.follow}
     />
+    </>
   }
 }
 const mapStateToProps =  (state)=>{
@@ -45,7 +56,8 @@ const mapStateToProps =  (state)=>{
     users:state.usersPageReducer.users,
     pageSize: state.usersPageReducer.pageSize,
     totalUsersCount: state.usersPageReducer.totalUsersCount,
-    currentPage: state.usersPageReducer.currentPage 
+    currentPage: state.usersPageReducer.currentPage,
+    isFetching: state.usersPageReducer.isFetching
   }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -64,6 +76,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     setTotalUsersCount: (totalCount)=>{
       dispatch(setUsersTotalCountActionCreator(totalCount))
+    },
+    toogleIsFetching:(isFetching)=>{
+      dispatch(toogleIsFetchingActionCreator(isFetching))
     }
   }
 }

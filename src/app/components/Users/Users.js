@@ -14,7 +14,7 @@ border-radius: 15px;
 color: #dadce1;
 font-size: 25px;
 display: grid;
-grid-template-columns: 2fr 2fr;
+grid-template-columns: 2fr 3fr;
 overflow-y: auto;
 `
 const Img = styled.img`
@@ -46,7 +46,6 @@ const Users = (props)=> {
             onClick ={(e)=>{props.onPageChanged(pages)}} >{pages}
           </span> 
         })}
-
       </div>
       {
         props.users.map( user => 

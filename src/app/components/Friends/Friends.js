@@ -37,10 +37,10 @@ const Users = (props)=>{
   
 const Friends =(props)=>{
 
-  const friendsElement = props.friendsData.map((friend, id) => <Users name={friend.name} id={friend.id}/>)
+  // const friendsElement = props.friendsData.map((friend, id) => <Users name={friend.name} id={friend.id}/>)
   return(
     <Div>
-      {friendsElement}
+      Friends
     </Div>
   )
   
