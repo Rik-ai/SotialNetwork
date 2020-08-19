@@ -50,9 +50,9 @@ const Users = (props)=> {
   return(
     <div>
       <Div2>
-        {pages.map(pages=>{
-          return <span className = {props.currentPage === pages && styles.selectedPage} //не работает выделение страницы, потом доработать
-            onClick ={(e)=>{props.onPageChanged(pages)}} >{pages}
+        {pages.map(page=>{
+          return <span className = {props.currentPage === page && styles.selectedPage} //не работает выделение страницы, потом доработать
+            onClick ={(e)=>{props.onPageChanged(page)}} >{page}
           </span> 
         })}
       </Div2>

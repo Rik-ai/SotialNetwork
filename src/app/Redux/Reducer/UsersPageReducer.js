@@ -57,7 +57,7 @@ export const unfollowActionCreator=(userId)=>({type:UNFOLLOW, userId})
 export const setUsersActionCreator=(users)=>({type:SET_USERS, users})
 export const setCurrentPageActionCreator=(currentPage)=>({type:SET_CURRENT_PAGE, currentPage})
 export const setUsersTotalCountActionCreator=(totalUsersCount)=>({type:SET_TOTAL_USERS_COUNT, count:totalUsersCount})
-export const toogleIsFetchingActionCreator=(isFetching)=>({type:TOOGLE_IS_FETCHING, count:isFetching})
+export const toogleIsFetchingActionCreator=(isFetching)=>({type:TOOGLE_IS_FETCHING, isFetching})
 
 
 
