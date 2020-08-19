@@ -4,8 +4,8 @@ import Post from './Post/Post'
 
 const PostBaner = styled.div`
 background-color:#242526;
-margin: 300px 0 0 50px;
-height: 450px;
+margin: -205px 0 0 0;
+height: 500px;
 width: 1400px;
 padding: 1rem;
 border 1px solid #474a4d;

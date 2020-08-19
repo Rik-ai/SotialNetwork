@@ -7,7 +7,7 @@ const SideBanner = styled.div`
 background-color:#242526;
 margin: 30px 0 0 6px;
 position: absolute;
-height: 830px;
+height: 860px;
 width: 250px;
 padding: 1rem;
 border: 1px solid #474a4d;

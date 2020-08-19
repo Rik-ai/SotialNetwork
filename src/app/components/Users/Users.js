@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import userPhoto from '../../assets/images/images.png'
 import styles from './styles.module.css'
+import { NavLink } from 'react-router-dom'
 
 const Div = styled.div`
 margin-top: 10px;
@@ -61,7 +62,9 @@ const Users = (props)=> {
         {
           props.users.map( user => 
             <div key ={user.id}>
-              <Img src={user.photos.small != null ? user.photos.small : userPhoto} />
+              <NavLink to={'/profile/' + user.id}>
+                <Img src={user.photos.small != null ? user.photos.small : userPhoto} />
+              </NavLink>
               <div>
                 <div>{user.name}</div>
                 <div>Status: {user.status}</div>

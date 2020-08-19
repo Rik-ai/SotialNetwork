@@ -6,7 +6,7 @@ import UserMessages from './UserMessages/UserMessages'
 const Div = styled.div`
 background-color:#242526;
 margin: 30px 0 0 300px;
-height: 700px;
+height: 730px;
 width: 1530px;
 padding: 1rem;
 border: 1px solid #474a4d;

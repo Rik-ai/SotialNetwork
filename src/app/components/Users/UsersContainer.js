@@ -30,7 +30,6 @@ class UsersAPIContainer extends React.Component {
 
   render() { 
     return <>
-    {/* прелоадер не крутится почему-то */}
     {this.props.isFetching ? <Preloader/> : null} 
      
     <Users
