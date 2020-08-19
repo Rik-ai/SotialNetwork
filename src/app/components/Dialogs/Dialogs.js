@@ -14,7 +14,7 @@ border-radius: 15px;
 color: #dadce1;
 font-size: 2em;
 display: grid;
-grid-template-columns: 2fr 3fr;
+grid-template-columns: 1fr 2fr;
 overflow-y: auto;
 `
 const TextArea = styled.textarea`

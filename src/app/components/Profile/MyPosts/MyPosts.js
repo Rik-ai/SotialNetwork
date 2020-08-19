@@ -2,11 +2,11 @@ import React from 'react'
 import styled from '@emotion/styled'
 import Post from './Post/Post'
 
-const SideBanner = styled.div`
+const PostBaner = styled.div`
 background-color:#242526;
-margin: 450px 0 0 150px;
-height: 300px;
-width: 1200px;
+margin: 300px 0 0 50px;
+height: 450px;
+width: 1400px;
 padding: 1rem;
 border 1px solid #474a4d;
 border-radius: 15px;
@@ -53,7 +53,7 @@ const MyPosts = (props) => {
   }
 
   return (
-    <SideBanner >
+    <PostBaner >
       <div>
         <h3>My posts:</h3>
         <div>
@@ -71,7 +71,7 @@ const MyPosts = (props) => {
           {postElement}
         </PostStyle>
       </div>
-    </SideBanner>
+    </PostBaner>
   )
 }
   

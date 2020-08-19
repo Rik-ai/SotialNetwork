@@ -4,17 +4,16 @@ import userPhoto from '../../assets/images/images.png'
 import styles from './styles.module.css'
 
 const Div = styled.div`
-background-color:#242526;
-margin: 30px 0 0 300px;
-height: 830px;
-width: 1530px;
-padding: 1rem;
+margin-top: 10px;
+height: 730px;
+width: 1490px;
+padding: 10px;
 border: 1px solid #474a4d;
 border-radius: 15px;
 color: #dadce1;
-font-size: 25px;
+font-size: 30px;
 display: grid;
-grid-template-columns: 2fr 3fr;
+grid-template-columns: 2fr 2fr;
 overflow-y: auto;
 `
 const Img = styled.img`
@@ -23,12 +22,22 @@ height:100px;
 border-radius: 20px;
 `
 const Button = styled.button`
-
 padding-left:5px;
 margin-bottom: 10px;
 display: inline-block;
 font-family:inherit;
 font-size:20px;
+`
+const Div2 = styled.div`
+height: 30px;
+width: 1480px;
+padding: 15px;
+border: 1px solid #474a4d;
+border-radius: 15px;
+color: #dadce1;
+font-size: 25px;
+overflow-y: auto;
+overflow-x: none;
 `
 
 
@@ -39,33 +48,36 @@ const Users = (props)=> {
     pages.push(i)
   }
   return(
-    <Div>
-      <div>
+    <div>
+      <Div2>
         {pages.map(pages=>{
           return <span className = {props.currentPage === pages && styles.selectedPage} //не работает выделение страницы, потом доработать
             onClick ={(e)=>{props.onPageChanged(pages)}} >{pages}
           </span> 
         })}
-      </div>
-      {
-        props.users.map( user => 
-          <div key ={user.id}>
-            <Img src={user.photos.small != null ? user.photos.small : userPhoto} />
-            <div>
-              <div>{user.name}</div>
-              <div>Status: {user.status}</div>
-              <div>Country: {'user.location.country'}</div>
-              <div>City: {'user.location.city'}</div>
-              {user.followed 
-                ? <Button onClick={()=>{props.unfollow(user.id)}}>Unfollow</Button>
-                : <Button onClick={()=>{props.follow(user.id)}}>Follow</Button>}
-            </div>
+      </Div2>
+      <Div>
+      
+        {
+          props.users.map( user => 
+            <div key ={user.id}>
+              <Img src={user.photos.small != null ? user.photos.small : userPhoto} />
+              <div>
+                <div>{user.name}</div>
+                <div>Status: {user.status}</div>
+                <div>Country: {'user.location.country'}</div>
+                <div>City: {'user.location.city'}</div>
+                {user.followed 
+                  ? <Button onClick={()=>{props.unfollow(user.id)}}>Unfollow</Button>
+                  : <Button onClick={()=>{props.follow(user.id)}}>Follow</Button>}
+              </div>
   
                
-          </div>
-        )
-      }
-    </Div>
+            </div>
+          )
+        }
+      </Div>
+    </div>
   )
 }
 
