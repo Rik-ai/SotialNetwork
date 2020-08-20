@@ -23,20 +23,6 @@ left: 0;
 margin: 0;
 background: #151616;
 `
-const Div = styled.div`
-background-color:#242526;
-margin: 30px 0 0 300px;
-height: 860px;
-width: 1530px;
-padding: 1rem;
-border: 1px solid #474a4d;
-border-radius: 15px;
-color: #dadce1;
-font-size: 25px;
-overflow-y: none;
-`
-
-
 
 const Main = (props) => { 
   return (
@@ -44,14 +30,12 @@ const Main = (props) => {
       <TopBar/>
       <LeftBar />
       <Route path='/dialogs' render={()=> <DialogsContainer/>}/>
-      <Div>
-        <Route path='/profile' render={()=> <ProfileContainer />}/>
-        <Route path='/users' render={()=> <UsersContainer/>}/>
-        <Route path='/news' render={()=> <News/>}/>
-        <Route path='/music' render={()=> <Music/>}/>
-        <Route path='/settings' render={()=> <Settings/>}/>
-        <Route path='/friends' render={()=> <Friends/>}/>
-      </Div>
+      <Route path='/profile' render={()=> <ProfileContainer />}/>
+      <Route path='/users' render={()=> <UsersContainer/>}/>
+      <Route path='/news' render={()=> <News/>}/>
+      <Route path='/music' render={()=> <Music/>}/>
+      <Route path='/settings' render={()=> <Settings/>}/>
+      <Route path='/friends' render={()=> <Friends/>}/>
 
     </AppStyleWrapper >
 

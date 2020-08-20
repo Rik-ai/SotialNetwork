@@ -4,15 +4,16 @@ import Post from './Post/Post'
 
 const PostBaner = styled.div`
 background-color:#242526;
-margin: -205px 0 0 0;
-height: 500px;
-width: 1400px;
+margin: -160px 0 0 0;
+height: 50%;
+width: 80%;
 padding: 1rem;
 border 1px solid #474a4d;
 border-radius: 15px;
 color:#dadce1;
 font-size: 25px;
 overflow-y: auto;
+position: static;
 `
 const Button = styled.button`
 padding-left:5px;

@@ -5,14 +5,26 @@ import styles from './styles.module.css'
 import { NavLink } from 'react-router-dom'
 
 const Div = styled.div`
-margin-top: 10px;
-height: 730px;
-width: 1490px;
+background-color:#242526;
+margin: 30px 0 0 300px;
+height: 100%;
+width: 100%;
 padding: 10px;
 border: 1px solid #474a4d;
 border-radius: 15px;
 color: #dadce1;
-font-size: 30px;
+font-size: 25px;
+`
+const UserBaner = styled.div`
+background-color:#242526;
+margin: 10px;
+height: 75%;
+width: 80%;
+padding: 1rem;
+border 1px solid #474a4d;
+border-radius: 15px;
+color:#dadce1;
+font-size: 25px;
 display: grid;
 grid-template-columns: 2fr 2fr;
 overflow-y: auto;
@@ -30,8 +42,10 @@ font-family:inherit;
 font-size:20px;
 `
 const Div2 = styled.div`
+margin: 10px;
+background-color:#242526;
 height: 30px;
-width: 1480px;
+width: 80%;
 padding: 15px;
 border: 1px solid #474a4d;
 border-radius: 15px;
@@ -49,7 +63,7 @@ const Users = (props)=> {
     pages.push(i)
   }
   return(
-    <div>
+    <Div>
       <Div2>
         {pages.map(page=>{
           return <span className = {props.currentPage === page && styles.selectedPage} //не работает выделение страницы, потом доработать
@@ -57,7 +71,7 @@ const Users = (props)=> {
           </span> 
         })}
       </Div2>
-      <Div>
+      <UserBaner>
       
         {
           props.users.map( user => 
@@ -79,8 +93,8 @@ const Users = (props)=> {
             </div>
           )
         }
-      </Div>
-    </div>
+      </UserBaner>
+    </Div>
   )
 }
 

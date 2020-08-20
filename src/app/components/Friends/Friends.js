@@ -12,7 +12,18 @@ padding-left: 10px;
 display: inline;
 border-radius: 50px;
 `
-
+const Div = styled.div`
+background-color:#242526;
+margin: 30px 0 0 300px;
+height: 100%;
+width: 100%;
+padding: 1rem;
+border: 1px solid #474a4d;
+border-radius: 15px;
+color: #dadce1;
+font-size: 25px;
+overflow-y: none;
+`
 const Users = (props)=>{
   return(
     <Div2>
@@ -28,9 +39,9 @@ const Friends =(props)=>{
 
   // const friendsElement = props.friendsData.map((friend, id) => <Users name={friend.name} id={friend.id}/>)
   return(
-    <div>
+    <Div>
       Friends
-    </div>
+    </Div>
   )
   
 }

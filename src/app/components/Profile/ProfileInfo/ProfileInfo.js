@@ -32,7 +32,7 @@ const ProfileInfo = (props) => {
         <Div2>About Me: {props.profile.aboutMe}</Div2> 
         <Div2>Job Description: {props.profile.lookingForAJobDescription}</Div2> 
         <Div2>Looking for a job: {props.profile.lookingForAJob}</Div2> 
-        <Div2>Contacts Me: {props.myContacts}</Div2> 
+        {/* <Div2>Contacts Me: {props.profile.contacts}</Div2>  */}
       </Div>
     </div>
   )
