@@ -24,6 +24,11 @@ const ProfileInfo = (props) => {
   if(!props.profile){
     return <Preloader/>
   }
+  // if(props.profile.lookingForAJob === true){
+  //   lookingForAJob = 'Yes'
+  // }else(props.profile.lookingForAJob === false){
+  //   lookingForAJob = 'No'
+  // }
   return (
     <div>
       <Img src={props.profile.photos.large} />
