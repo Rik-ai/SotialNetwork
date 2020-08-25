@@ -1,5 +1,5 @@
 import React from 'react'
-import TopBar from './TopBar'
+import Header from './Header'
 import Axios from 'axios'
 import { connect } from 'react-redux'
 import { setAuthUserData } from '../../Redux/Reducer/AuthReducer'
@@ -20,7 +20,7 @@ class HeaderContainer extends React.Component {
   }
 
   render () {
-    return ( <TopBar {...this.props} />)
+    return ( <Header {...this.props} />)
 
   }
 }

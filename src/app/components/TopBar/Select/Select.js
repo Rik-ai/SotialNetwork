@@ -4,15 +4,12 @@ import styled from '@emotion/styled'
 
 
 const Select2 = styled.div`
-margin-bottom: 15px;
+padding: 0px 5px;
 &;label {
-margin: 0 0 3px 0;
-padding-top: 1rem;
-font-weight: bold;
+padding-top: 10px;
 display: block;
 },
 &;select {
-display: block;
 box-sizing: border-box;
 border: 1px solid #bebebe;
 height: 30px;
