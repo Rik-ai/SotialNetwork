@@ -2,7 +2,6 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import styled from '@emotion/styled'
 
-import TopBar from './TopBar/TopBar'
 import LeftBar from './LeftBar/LeftBar'
 import ProfileContainer from'./Profile/ProfileContainer'
 import News from './News/News'
@@ -11,6 +10,7 @@ import Settings from './Settings/Settings'
 import Friends from './Friends/Friends'
 import DialogsContainer from './Dialogs/DialogsContainer'
 import UsersContainer from './Users/UsersContainer'
+import HeaderContainer from './TopBar/HeaderContainer'
 
 
 const AppStyleWrapper = styled.div`
@@ -27,7 +27,7 @@ background: #151616;
 const Main = (props) => { 
   return (
     <AppStyleWrapper>
-      <TopBar/>
+      <HeaderContainer/>
       <LeftBar />
       <Route path='/dialogs' render={()=> <DialogsContainer/>}/>
       <Route path='/profile/:userId?' render={()=> <ProfileContainer />}/>
