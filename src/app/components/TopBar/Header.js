@@ -38,7 +38,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 transition: filter 300ms;
-:hover{
+&:hover{
   filter: brightness(1.2)
 }
 svg{

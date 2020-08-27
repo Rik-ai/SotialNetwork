@@ -10,7 +10,9 @@ class UsersAPIContainer extends React.Component {
 
   componentDidMount(){
     this.props.toogleIsFetching(true)
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`, {
+      withCredentials: true
+    })
       .then(response => {
         this.props.toogleIsFetching(false)
         this.props.setUsers(response.data.items)
@@ -21,7 +23,9 @@ class UsersAPIContainer extends React.Component {
   onPageChanged = (pageNumber) => {
     this.props.setCurrentPage(pageNumber)
     this.props.toogleIsFetching(true)
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
+    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`, {
+      withCredentials: true
+    })
       .then(response => {
         this.props.toogleIsFetching(false)
         this.props.setUsers(response.data.items)
@@ -53,28 +57,7 @@ const mapStateToProps =  (state)=>{
     isFetching: state.usersPageReducer.isFetching
   }
 }
-// const mapDispatchToProps = (dispatch) => {
-//   return{
-//     follow: (userId) => {
-//       dispatch(followActionCreator(userId))
-//     },
-//     unfollow: (userId) => {
-//       dispatch(unfollowActionCreator(userId))
-//     },
-//     setUsers: (users) => {
-//       dispatch(setUsersActionCreator(users))
-//     },
-//     setCurrentPage: (pageNumber)=>{
-//       dispatch(setCurrentPageActionCreator(pageNumber))
-//     },
-//     setTotalUsersCount: (totalCount)=>{
-//       dispatch(setUsersTotalCountActionCreator(totalCount))
-//     },
-//     toogleIsFetching:(isFetching)=>{
-//       dispatch(toogleIsFetchingActionCreator(isFetching))
-//     }
-//   }
-// }
+
 
 const UsersContainer = connect(mapStateToProps,{follow,unfollow,setUsers,setCurrentPage,setTotalUsersCount,toogleIsFetching})(UsersAPIContainer)
 
