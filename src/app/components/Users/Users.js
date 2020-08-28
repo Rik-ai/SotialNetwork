@@ -3,7 +3,6 @@ import styled from '@emotion/styled'
 import userPhoto from '../../assets/images/images.png'
 import styles from './styles.module.css'
 import { NavLink } from 'react-router-dom'
-import * as axios from 'axios'
 
 const Div = styled.div`
 background-color:#242526;
@@ -86,41 +85,15 @@ const Users = (props)=> {
                 <div>Country: {'user.location.country'}</div>
                 <div>City: {'user.location.city'}</div>
                 {user.followed 
-                  ? <Button disabled={props.followingInProgress.some(id=>id === user.id)} onClick={()=>{
-                    props.tooglefollowingInProgress(true, user.id)
-                    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, { 
-                      withCredentials: true,
-                      headers: {
-                        'API-KEY': '8caa51db-0dfd-4c99-835c-a166a6c3b232'
-                      }
-                    })
-                      .then(response => {
-                        if (response.data.resultCode == 0){
-                          props.unfollow(user.id)
-                        } 
-                        props.tooglefollowingInProgress(false, user.id)
-                      })
-                  }}>Unfollow</Button>
+                  ? <Button disabled={props.followingInProgress.some(id=>id === user.id)}
+                    onClick={()=>{props.unfollow(user.id)}}>
+                     Unfollow</Button>
 
-                  : <Button disabled={props.followingInProgress.some(id=>id === user.id)} onClick={()=>{
-                    props.tooglefollowingInProgress(true, user.id)
-                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {}, { 
-                      withCredentials: true,
-                      headers: {
-                        'API-KEY': '8caa51db-0dfd-4c99-835c-a166a6c3b232'
-                      }
-                    })
-                      .then(response => {
-                        if (response.data.resultCode == 0){
-                          props.follow(user.id)
-                        } 
-                        props.tooglefollowingInProgress(false, user.id)
-                      })
-                  }}>Follow</Button>
+                  : <Button disabled={props.followingInProgress.some(id=>id === user.id)}
+                    onClick={()=>{props.follow(user.id)}}>
+                     Follow</Button>
                 }
               </div>
-  
-               
             </div>
           )
         }
@@ -128,6 +101,5 @@ const Users = (props)=> {
     </Div>
   )
 }
-
 
 export default Users

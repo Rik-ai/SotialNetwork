@@ -1,35 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { follow,unfollow,setUsers,setCurrentPage,setTotalUsersCount,toogleIsFetching, tooglefollowingInProgress } from '../../Redux/Reducer/UsersPageReducer'
+import { follow,unfollow,setCurrentPage,
+  getUsers } from '../../Redux/Reducer/UsersPageReducer'
 import Users from './Users'
 import Preloader from '../common/Preloader/Preloader'
-import { usersAPI } from '../api/api'
 
 
 class UsersAPIContainer extends React.Component {
 
   componentDidMount(){
-    this.props.toogleIsFetching(true)
-
-    usersAPI.getUsers(this.props.currentPage, this.props.pageSize)
-      .then(data => {
-        this.props.toogleIsFetching(false)
-        this.props.setUsers(data.items)
-        this.props.setTotalUsersCount(data.totalCount)
-      })
+    this.props.getUsers(this.props.setCurrentPage, this.props.pageSize)
   }
-
   onPageChanged = (pageNumber) => {
-    this.props.setCurrentPage(pageNumber)
-    this.props.toogleIsFetching(true)
-
-    usersAPI.getUsers(pageNumber, this.props.pageSize)
-      .then(data => {
-        this.props.toogleIsFetching(false)
-        this.props.setUsers(data.items)
-      })
+    this.props.getUsers(pageNumber, this.props.pageSize)
   }
-
   render() { 
     return <>
     {this.props.isFetching ? <Preloader/> : null} 
@@ -42,7 +26,6 @@ class UsersAPIContainer extends React.Component {
       users={this.props.users}
       unfollow={this.props.unfollow}
       follow={this.props.follow}
-      tooglefollowingInProgress={this.props.tooglefollowingInProgress}
       followingInProgress={this.props.followingInProgress}
     />
     </>
@@ -60,8 +43,7 @@ const mapStateToProps =  (state)=>{
 }
 
 
-const UsersContainer = connect(mapStateToProps,
-  {tooglefollowingInProgress, follow,unfollow,setUsers,setCurrentPage,setTotalUsersCount,toogleIsFetching}
+const UsersContainer = connect(mapStateToProps,{follow, unfollow, setCurrentPage, getUsers}
 )(UsersAPIContainer)
 
 export default UsersContainer
