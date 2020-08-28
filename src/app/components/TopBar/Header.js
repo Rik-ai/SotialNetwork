@@ -55,13 +55,16 @@ right: 1800px;
 `
 
 const Header = (props)=>{
+  
   return(
     <NavBar>
       <Img src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTfTBba-a3Kwl_OzBUcg7wBiaUa-iW1PNkzag&usqp=CAU' />
       <Select />
 
-      {props.isAuth ? <NavItems icon={<LoginIcon/>} /> 
-        : <NavLink to={'/login'}><NavItems icon={<LogoutIcon/>} /></NavLink>}
+      {props.isAuth 
+        ? <NavLink to={'/profile'}><NavItems icon={<LoginIcon/>} /></NavLink> 
+        : <NavLink to={'/login'}><NavItems icon={<LogoutIcon/>} /></NavLink>
+      }
 
       <NavLink to={'/dialogs'}><NavItems icon={<MessengerIcon/>} /></NavLink>
       <NavLink to={'/plus'}><NavItems icon={<PlusIcon/>} /></NavLink>
